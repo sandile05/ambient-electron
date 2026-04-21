@@ -1135,6 +1135,8 @@ canvas#cv {
   margin-bottom: 22px;
   font-size: 0.95rem;
   transition: border-color 0.4s;
+  color: var(--whi);
+  font-size: 1.1rem;
 }
 .ct-ch:hover .ct-ico {
   border-color: var(--c);
