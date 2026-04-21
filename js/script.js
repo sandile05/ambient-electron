@@ -247,11 +247,12 @@ observeFadeIns();
 
 /* ── Active nav on scroll ── */
 const navSections = [
-  "services",
+  "about",
   "process",
+  "services",
   "pricing",
-  "portfolio",
   "testimonials",
+  "portfolio",
   "contact",
 ];
 const navLinks = document.querySelectorAll("[data-nav]");
