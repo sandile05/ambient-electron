@@ -715,11 +715,16 @@ canvas#cv {
 }
 .pr-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: var(--ln);
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+  .pr-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
   .pr-grid {
     grid-template-columns: 1fr;
   }
@@ -853,6 +858,34 @@ canvas#cv {
   border-color: var(--c);
   color: var(--c);
   background: var(--c2);
+}
+
+.pr-card.maintain {
+  background: var(--deep);
+}
+.pr-card.maintain::before {
+  opacity: 0.4;
+}
+.pr-monthly {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 900;
+  color: var(--whi);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pr-monthly sub {
+  font-size: 0.4em;
+  color: var(--soft);
+  font-weight: 400;
+  vertical-align: bottom;
+  margin-left: 4px;
+}
+.pr-monthly sup {
+  font-size: 0.35em;
+  color: var(--c);
+  font-weight: 400;
+  vertical-align: top;
 }
 
 /* ── TESTIMONIALS ── */
@@ -1202,14 +1235,14 @@ footer {
   font-size: 0.52rem;
   letter-spacing: 2px;
   color: var(--soft);
-  opacity: 0.7;
+  opacity: 0.4;
 }
 .ft-reg {
   font-family: "DM Mono", monospace;
   font-size: 0.52rem;
   letter-spacing: 2px;
   color: var(--soft);
-  opacity: 0.7;
+  opacity: 0.35;
 }
 .ft-legal {
   display: flex;
@@ -1221,7 +1254,7 @@ footer {
   letter-spacing: 2px;
   color: var(--soft);
   text-decoration: none;
-  opacity: 0.6;
+  opacity: 0.5;
   transition: opacity 0.3s;
 }
 .ft-legal a:hover {
@@ -1246,20 +1279,12 @@ footer {
   font-size: 1.3rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  opacity: 0;
-  pointer-events: none;
   transition:
-    opacity 0.4s ease,
     background 0.3s,
     transform 0.3s,
     box-shadow 0.3s;
   box-shadow: 0 0 0 0 rgba(0, 207, 255, 0);
   animation: wa-pulse 3s ease infinite;
-}
-
-.wa-float.show {
-  opacity: 1;
-  pointer-events: all;
 }
 .wa-float:hover {
   background: var(--dim);

@@ -4,9 +4,22 @@
    How to publish: File > Share > Publish to web > [Tab] > CSV
    ============================================================ */
 const PRICING_URLS = [
-  { url: "", featured: false }, // Tab 1 — Signal
-  { url: "", featured: true }, // Tab 2 — Pulse  (featured)
-  { url: "", featured: false }, // Tab 3 — Current
+  {
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=791159862&single=true&output=csv",
+    featured: false,
+  }, // Tab 1 — Signal
+  {
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=0&single=true&output=csv",
+    featured: true,
+  }, // Tab 2 — Pulse  (featured)
+  {
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=2098180478&single=true&output=csv",
+    featured: false,
+  }, // Tab 3 — Current
+  {
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=759383848&single=true&output=csv",
+    featured: false,
+  }, // Tab 4 — Maintain
 ];
 
 const FALLBACK = [
@@ -15,17 +28,16 @@ const FALLBACK = [
     pages: "1–3",
     price: "From R2,500",
     tagline:
-      "Essential presence for organisations launching their first professional website.",
+      "A clean, professional presence for organisations launching online for the first time.",
     featured: false,
     features: [
-      { label: "Proven school website foundation", on: true },
-      { label: "Personalised to your branding", on: true },
       { label: "Mobile responsive layout", on: true },
-      { label: "Contact form integration", on: true },
+      { label: "Contact form", on: true },
       { label: "Basic SEO setup", on: true },
+      { label: "Hosting guidance & setup", on: true },
       { label: "2 revision rounds", on: true },
       { label: "CMS / admin panel", on: false },
-      { label: "Social media integration", on: false },
+      { label: "Ongoing support", on: false },
     ],
   },
   {
@@ -36,14 +48,13 @@ const FALLBACK = [
       "A comprehensive platform for growing organisations that need depth, flexibility, and a strong online presence.",
     featured: true,
     features: [
-      { label: "Proven school website foundation", on: true },
-      { label: "Personalised to your branding", on: true },
       { label: "Mobile responsive layout", on: true },
-      { label: "Contact form integration", on: true },
-      { label: "Advanced SEO setup", on: true },
-      { label: "3 revision rounds", on: true },
       { label: "CMS / admin panel", on: true },
-      { label: "Social media integration", on: true },
+      { label: "Contact form & basic integrations", on: true },
+      { label: "Advanced SEO setup", on: true },
+      { label: "Hosting setup & configuration", on: true },
+      { label: "3 months post-launch support", on: true },
+      { label: "3 revision rounds", on: true },
     ],
   },
   {
@@ -51,17 +62,34 @@ const FALLBACK = [
     pages: "9+",
     price: "From R12,000",
     tagline:
-      "Full-scale digital presence for larger organisations with complex content and ongoing needs.",
+      "Full-scale digital presence for organisations with complex content and long-term ambitions.",
     featured: false,
     features: [
-      { label: "Proven school website foundation", on: true },
-      { label: "Personalised to your branding", on: true },
       { label: "Mobile responsive layout", on: true },
+      { label: "CMS / admin panel", on: true },
       { label: "Advanced forms & integrations", on: true },
       { label: "Full SEO strategy", on: true },
+      { label: "Hosting setup & configuration", on: true },
+      { label: "6 months post-launch support", on: true },
       { label: "5 revision rounds", on: true },
-      { label: "CMS / admin panel", on: true },
-      { label: "Priority ongoing support", on: true },
+      { label: "Priority support", on: true },
+    ],
+  },
+  {
+    tier: "Maintain",
+    pages: "monthly",
+    price: "R600",
+    tagline:
+      "Keep your site fast, secure, and up to date. Pick up where your support period ends.",
+    featured: false,
+    maintain: true,
+    features: [
+      { label: "Content updates & changes", on: true },
+      { label: "Security monitoring", on: true },
+      { label: "Performance checks", on: true },
+      { label: "Hosting management", on: true },
+      { label: "Monthly activity report", on: true },
+      { label: "Priority response time", on: true },
     ],
   },
 ];
@@ -89,18 +117,27 @@ function renderCard(d, featuredOverride) {
   const featured =
     featuredOverride !== undefined
       ? featuredOverride
-      : d.featured === "true" || d.featured === true;
+      : d.featured === "true" || d.featured === true || d.featured === "TRUE";
+  const isMaintain =
+    d.maintain === true || d.maintain === "true" || d.maintain === "TRUE";
   const featsHtml = (d.features || [])
     .map((f) => `<li class="${f.on ? "" : "off"}">${f.label}</li>`)
     .join("");
-  const priceHtml = d.price ? `<div class="pr-price">${d.price}</div>` : "";
-  return `<div class="pr-card${featured ? " featured" : ""} fade-in" role="listitem">
+  const priceBlock = isMaintain
+    ? `<div class="pr-monthly">${d.price||'R600'} <sub>/month</sub></div>`
+    : d.price
+      ? `<div class="pr-price">${d.price}</div>`
+      : "";
+  const pagesBlock = isMaintain
+    ? `<div class="pr-pages">Monthly <sub>plan</sub></div>`
+    : `<div class="pr-pages">${d.pages || ""} <sub>pages</sub></div>`;
+  return `<div class="pr-card${featured ? " featured" : ""}${isMaintain ? " maintain" : ""} fade-in" role="listitem">
     <div class="pr-tier">${d.tier || ""}${featured ? " &nbsp;— &nbsp;Most Popular" : ""}</div>
-    <div class="pr-pages">${d.pages || ""} <sub>pages</sub></div>
-    ${priceHtml}
+    ${pagesBlock}
+    ${priceBlock}
     <p class="pr-note">${d.tagline || ""}</p>
     <ul class="pr-feats">${featsHtml}</ul>
-    <a href="#contact" class="pr-btn">Get a Quote</a>
+    <a href="#contact" class="pr-btn">${isMaintain ? "Get Started" : "Get a Quote"}</a>
   </div>`;
 }
 
@@ -247,12 +284,11 @@ observeFadeIns();
 
 /* ── Active nav on scroll ── */
 const navSections = [
-  "about",
-  "process",
   "services",
+  "process",
   "pricing",
-  "testimonials",
   "portfolio",
+  "testimonials",
   "contact",
 ];
 const navLinks = document.querySelectorAll("[data-nav]");
@@ -266,7 +302,6 @@ window.addEventListener(
     navEl.classList.toggle("scrolled", y > 60);
     // back to top
     document.getElementById("btt").classList.toggle("show", y > 400);
-    document.querySelector('.wa-float').classList.toggle('show', y > 400);
     // active section highlight
     let current = "";
     navSections.forEach((id) => {
