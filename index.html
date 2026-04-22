@@ -10,7 +10,6 @@
     <a href="#main" class="skip-link">Skip to content</a>
     <div id="cur"></div>
 
-    <!-- DRAWER -->
     <div
       class="drawer"
       id="drawer"
@@ -18,11 +17,16 @@
       aria-modal="true"
       aria-label="Navigation menu"
     >
-      <a href="#services" onclick="closeDrawer()">Services</a>
-      <a href="#process" onclick="closeDrawer()">Process</a>
-      <a href="#pricing" onclick="closeDrawer()">Pricing</a>
-      <a href="#portfolio" onclick="closeDrawer()">Portfolio</a>
-      <a href="#contact" onclick="closeDrawer()">Contact</a>
+      <div class="drawer-inner">
+        <button class="drawer-close" id="dclose" aria-label="Close menu">
+          ✕
+        </button>
+        <a href="#services" onclick="closeDrawer()">Services</a>
+        <a href="#process" onclick="closeDrawer()">Process</a>
+        <a href="#pricing" onclick="closeDrawer()">Pricing</a>
+        <a href="#portfolio" onclick="closeDrawer()">Portfolio</a>
+        <a href="#contact" onclick="closeDrawer()">Contact</a>
+      </div>
     </div>
 
     <!-- NAV -->
@@ -132,7 +136,7 @@
             </p>
           </div>
           <div class="proc-step fade-in">
-            <div class="proc-n">02 — Personalise It</div>
+            <div class="proc-n">02 — Personalise</div>
             <h3 class="proc-title">Made for You</h3>
             <p class="proc-body">
               We adapt the foundation to your identity — your colours, logo,
@@ -417,7 +421,7 @@
 
     <!-- FLOATING WHATSAPP -->
     <a
-      href="https://wa.me/27000000000"
+      href="https://wa.me/27749258393"
       class="wa-float"
       target="_blank"
       rel="noopener noreferrer"

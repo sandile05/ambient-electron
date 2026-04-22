@@ -284,11 +284,12 @@ observeFadeIns();
 
 /* ── Active nav on scroll ── */
 const navSections = [
-  "services",
+  "about",
   "process",
+  "services",
   "pricing",
-  "portfolio",
   "testimonials",
+  "portfolio",
   "contact",
 ];
 const navLinks = document.querySelectorAll("[data-nav]");
@@ -302,6 +303,7 @@ window.addEventListener(
     navEl.classList.toggle("scrolled", y > 60);
     // back to top
     document.getElementById("btt").classList.toggle("show", y > 400);
+    document.querySelector('.wa-float').classList.toggle('show', y > 400);
     // active section highlight
     let current = "";
     navSections.forEach((id) => {
@@ -342,6 +344,7 @@ document.querySelectorAll(".sv-item .sv-head").forEach((head) => {
 const hbg = document.getElementById("hbg");
 const drawer = document.getElementById("drawer");
 
+
 function openDrawer() {
   drawer.classList.add("open");
   hbg.classList.add("open");
@@ -354,6 +357,8 @@ function closeDrawer() {
   hbg.setAttribute("aria-expanded", "false");
   document.body.style.overflow = "";
 }
+document.getElementById('dclose').addEventListener('click', closeDrawer);
+
 hbg.addEventListener("click", () => {
   hbg.classList.contains("open") ? closeDrawer() : openDrawer();
 });
