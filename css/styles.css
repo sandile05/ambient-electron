@@ -755,7 +755,7 @@ canvas#cv {
 }
 .pr-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
   background: var(--ln);
 }
@@ -1277,14 +1277,14 @@ footer {
   font-size: 0.52rem;
   letter-spacing: 2px;
   color: var(--soft);
-  opacity: 0.4;
+  opacity: 0.6;
 }
 .ft-reg {
   font-family: "DM Mono", monospace;
   font-size: 0.52rem;
   letter-spacing: 2px;
   color: var(--soft);
-  opacity: 0.35;
+  opacity: 0.6;
 }
 .ft-legal {
   display: flex;
@@ -1296,7 +1296,7 @@ footer {
   letter-spacing: 2px;
   color: var(--soft);
   text-decoration: none;
-  opacity: 0.5;
+  opacity: 0.6;
   transition: opacity 0.3s;
 }
 .ft-legal a:hover {

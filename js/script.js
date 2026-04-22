@@ -20,6 +20,7 @@ const PRICING_URLS = [
     url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=759383848&single=true&output=csv",
     featured: false,
   }, // Tab 4 — Maintain
+  { url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=381115909&single=true&output=csv", featured: false }, // Tab 5 — Hosting
 ];
 
 const FALLBACK = [
@@ -37,7 +38,7 @@ const FALLBACK = [
       { label: "Hosting guidance & setup", on: true },
       { label: "2 revision rounds", on: true },
       { label: "CMS / admin panel", on: false },
-      { label: "Ongoing support", on: false },
+      { label: "2 months post-launch support + hosting", on: false },
     ],
   },
   {
@@ -53,7 +54,7 @@ const FALLBACK = [
       { label: "Contact form & basic integrations", on: true },
       { label: "Advanced SEO setup", on: true },
       { label: "Hosting setup & configuration", on: true },
-      { label: "3 months post-launch support", on: true },
+      { label: "4 months post-launch support + hosting", on: true },
       { label: "3 revision rounds", on: true },
     ],
   },
@@ -70,7 +71,7 @@ const FALLBACK = [
       { label: "Advanced forms & integrations", on: true },
       { label: "Full SEO strategy", on: true },
       { label: "Hosting setup & configuration", on: true },
-      { label: "6 months post-launch support", on: true },
+      { label: "6 months post-launch support + hosting", on: true },
       { label: "5 revision rounds", on: true },
       { label: "Priority support", on: true },
     ],
@@ -90,6 +91,22 @@ const FALLBACK = [
       { label: "Hosting management", on: true },
       { label: "Monthly activity report", on: true },
       { label: "Priority response time", on: true },
+    ],
+  },
+  {
+    tier: "Hosting",
+    pages: "monthly",
+    price: "R200",
+    tagline: "Just keep the lights on...",
+    featured: false,
+    maintain: true,
+    features: [
+      { label: "Site hosting & uptime", on: true },
+      { label: "Domain management support", on: true },
+      { label: "Basic availability monitoring", on: true },
+      { label: "Content updates", on: false },
+      { label: "Security patches", on: false },
+      { label: "Technical support", on: false },
     ],
   },
 ];
@@ -124,7 +141,7 @@ function renderCard(d, featuredOverride) {
     .map((f) => `<li class="${f.on ? "" : "off"}">${f.label}</li>`)
     .join("");
   const priceBlock = isMaintain
-    ? `<div class="pr-monthly">${d.price||'R600'} <sub>/month</sub></div>`
+    ? `<div class="pr-monthly">${d.price || "R600"} <sub>/month</sub></div>`
     : d.price
       ? `<div class="pr-price">${d.price}</div>`
       : "";
@@ -303,7 +320,7 @@ window.addEventListener(
     navEl.classList.toggle("scrolled", y > 60);
     // back to top
     document.getElementById("btt").classList.toggle("show", y > 400);
-    document.querySelector('.wa-float').classList.toggle('show', y > 400);
+    document.querySelector(".wa-float").classList.toggle("show", y > 400);
     // active section highlight
     let current = "";
     navSections.forEach((id) => {
@@ -344,7 +361,6 @@ document.querySelectorAll(".sv-item .sv-head").forEach((head) => {
 const hbg = document.getElementById("hbg");
 const drawer = document.getElementById("drawer");
 
-
 function openDrawer() {
   drawer.classList.add("open");
   hbg.classList.add("open");
@@ -357,7 +373,7 @@ function closeDrawer() {
   hbg.setAttribute("aria-expanded", "false");
   document.body.style.overflow = "";
 }
-document.getElementById('dclose').addEventListener('click', closeDrawer);
+document.getElementById("dclose").addEventListener("click", closeDrawer);
 
 hbg.addEventListener("click", () => {
   hbg.classList.contains("open") ? closeDrawer() : openDrawer();
