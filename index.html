@@ -49,6 +49,8 @@
     <a href="#main" class="skip-link">Skip to content</a>
     <div id="cur"></div>
 
+    <!-- DRAWER -->
+    <
     <div
       class="drawer"
       id="drawer"
@@ -67,7 +69,6 @@
         <a href="#contact" onclick="closeDrawer()">Contact</a>
       </div>
     </div>
-
     <!-- NAV -->
     <nav id="nav" role="navigation" aria-label="Main navigation">
       <a href="#hero" class="nb" aria-label="Ambient Electron home"
@@ -124,7 +125,6 @@
       <!-- ABOUT -->
       <section
         class="sec"
-        id="about"
         aria-labelledby="about-heading"
         style="padding-top: 90px; padding-bottom: 90px"
       >
@@ -175,7 +175,7 @@
             </p>
           </div>
           <div class="proc-step fade-in">
-            <div class="proc-n">02 — Personalise</div>
+            <div class="proc-n">02 — Personalise It</div>
             <h3 class="proc-title">Made for You</h3>
             <p class="proc-body">
               We adapt the foundation to your identity — your colours, logo,
@@ -269,19 +269,44 @@
       <section class="sec sec-d" id="pricing" aria-labelledby="pricing-heading">
         <h2 class="s-h fade-in" id="pricing-heading">Transparent Pricing</h2>
         <p class="p-intro fade-in">
-          Every project starts with clarity. Choose a package that fits the
-          scale of your vision — all include our full personalisation and
-          development process.
+          Pricing starts from R2,500. Every project is scoped to your specific
+          needs — book a call and we'll give you a clear number within 24 hours.
         </p>
+
+        <p class="pr-section-label fade-in">Build</p>
         <div
-          class="pr-grid"
-          id="pr-grid"
+          class="pr-grid pr-grid-build"
+          id="pr-grid-build"
           role="list"
-          aria-label="Pricing tiers"
+          aria-label="Build pricing tiers"
         >
           <div class="pr-loading" style="grid-column: 1/-1" aria-live="polite">
             Loading pricing&hellip;
           </div>
+        </div>
+
+        <p class="pr-section-label fade-in" style="margin-top: 48px">Ongoing</p>
+        <div
+          class="pr-grid pr-grid-maintain"
+          id="pr-grid-maintain"
+          role="list"
+          aria-label="Ongoing pricing tiers"
+        >
+          <div class="pr-loading" style="grid-column: 1/-1" aria-live="polite">
+            Loading pricing&hellip;
+          </div>
+        </div>
+
+        <div class="pr-call fade-in">
+          <p class="pr-call-text">
+            Not sure which package fits? Let's figure it out together.
+          </p>
+          <a
+            href="#contact"
+            class="pr-call-btn"
+            onclick="setPackage('Book a Call')"
+            >Book a Call</a
+          >
         </div>
       </section>
 
@@ -298,7 +323,7 @@
               prospective families perceive our school.
             </p>
             <div class="tm-name">Principal M. Dlamini</div>
-            <div class="tm-org">Excellence High School</div>
+            <div class="tm-org">Northridge High School</div>
           </div>
           <div class="tm-card fade-in">
             <p class="tm-quote">
@@ -330,8 +355,7 @@
       >
         <h2 class="s-h fade-in" id="portfolio-heading">Live Work</h2>
         <div class="pf-layout">
-          <div class="pf-cell pf-bg1 fade-in">
-            <!-- add tall class -->
+          <div class="pf-cell tall pf-bg1 fade-in">
             <div class="pf-vis">
               <span class="pf-ghost" aria-hidden="true">HS</span>
             </div>
@@ -340,8 +364,7 @@
                 <div class="pf-kind">High School</div>
                 <div class="pf-title">Excellence High School</div>
                 <p class="pf-desc">
-                  A fully responsive school website with event calendar, staff
-                  directory, news section, and parent contact hub.
+                  Excellence High School's complete digital presence. Live news and announcements, exam timetables, full admissions flow, staff profiles, subject catalogue, and parent contact hub - all in one elegant platform.
                 </p>
                 <a
                   href="https://demo-school1.netlify.app/"
@@ -377,32 +400,161 @@
       <!-- CONTACT -->
       <section class="sec" id="contact" aria-labelledby="contact-heading">
         <h2 class="s-h fade-in" id="contact-heading">Start a Conversation</h2>
-        <div class="ct-row">
-          <a
-            href="https://wa.me/27749258393"
-            class="ct-ch fade-in"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Contact us on WhatsApp"
-          >
-            <div class="ct-ico" aria-hidden="true">💬</div>
-            <div class="ct-lbl">WhatsApp</div>
-            <div class="ct-val">+27 74 925 8393</div>
-          </a>
-          <a
-            href="mailto:ambientelectron.info@gmail.com"
-            class="ct-ch fade-in"
-            aria-label="Send us an email"
-          >
-            <div class="ct-ico" aria-hidden="true">✉</div>
-            <div class="ct-lbl">Email</div>
-            <div class="ct-val">ambientelectron.info@gmail.com</div>
-          </a>
-          <a href="tel:+27749258393" class="ct-ch fade-in" aria-label="Call us">
-            <div class="ct-ico" aria-hidden="true">☏</div>
-            <div class="ct-lbl">Phone</div>
-            <div class="ct-val">+27 74 925 8393</div>
-          </a>
+
+        <div class="ct-layout">
+          <!-- Channel links -->
+          <div class="ct-channels">
+            <a
+              href="https://wa.me/27749258393"
+              class="ct-ch fade-in"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact us on WhatsApp"
+            >
+              <div class="ct-ico" aria-hidden="true">💬</div>
+              <div class="ct-lbl">WhatsApp</div>
+              <div class="ct-val">+27 74 925 8393</div>
+            </a>
+            <a
+              href="mailto:ambientelectron.info@gmail.com"
+              class="ct-ch fade-in"
+              aria-label="Send us an email"
+            >
+              <div class="ct-ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M2 7l10 7 10-7"/>
+        </svg>
+              </div>
+              <div class="ct-lbl">Email</div>
+              <div class="ct-val">ambientelectron.info@gmail.com</div>
+            </a>
+            <a
+              href="tel:+27749258393"
+              class="ct-ch fade-in"
+              aria-label="Call us"
+            >
+              <div class="ct-ico" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.01 21 3 13.99 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+        </svg>
+              </div>
+              <div class="ct-lbl">Phone</div>
+              <div class="ct-val">+27 74 925 8393</div>
+            </a>
+          </div>
+
+          <!-- Contact form -->
+          <div class="ct-form-wrap fade-in">
+            <form
+              action="https://formspree.io/f/xvzdyvdz"
+              method="POST"
+              id="ct-form"
+              novalidate
+            >
+             
+              <div class="cf-row">
+                <div class="cf-group">
+                  <label class="cf-label" for="cf-name">Name</label>
+                  <input
+                    class="cf-input"
+                    type="text"
+                    id="cf-name"
+                    name="name"
+                    placeholder="Your full name"
+                    required
+                  />
+                </div>
+                <div class="cf-group">
+                  <label class="cf-label" for="cf-org">Organisation</label>
+                  <input
+                    class="cf-input"
+                    type="text"
+                    id="cf-org"
+                    name="organisation"
+                    placeholder="School or company name"
+                  />
+                </div>
+              </div>
+
+              <div class="cf-row">
+                <div class="cf-group">
+                  <label class="cf-label" for="cf-email">Email</label>
+                  <input
+                    class="cf-input"
+                    type="email"
+                    id="cf-email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+                <div class="cf-group">
+                  <label class="cf-label" for="cf-phone"
+                    >WhatsApp / Phone</label
+                  >
+                  <input
+                    class="cf-input"
+                    type="tel"
+                    id="cf-phone"
+                    name="phone"
+                    placeholder="+27 00 000 0000"
+                  />
+                </div>
+              </div>
+
+              <div class="cf-group">
+                <label class="cf-label" for="cf-package"
+                  >Package of Interest</label
+                >
+                <select
+                  class="cf-input cf-select"
+                  id="cf-package"
+                  name="package"
+                >
+                  <option value="">Select a package…</option>
+                  <option value="Signal">Signal — 1–3 pages</option>
+                  <option value="Pulse">Pulse — 4–8 pages</option>
+                  <option value="Current">Current — 9+ pages</option>
+                  <option value="Maintain">Maintain — Monthly retainer</option>
+                  <option value="Hosting">Hosting only — R200/month</option>
+                  <option value="Book a Call">
+                    Book a Call — general enquiry
+                  </option>
+                  <option value="Not sure">Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="cf-group">
+                <label class="cf-label" for="cf-message">Message</label>
+                <textarea
+                  class="cf-input cf-textarea"
+                  id="cf-message"
+                  name="message"
+                  placeholder="Tell us about your project…"
+                  rows="4"
+                ></textarea>
+              </div>
+
+              <div class="cf-footer">
+                <p class="cf-note">
+                  By submitting you agree to our
+                  <a href="./pages/privacy-policy.html">Privacy Policy</a>. We respond
+                  within 1 business day.
+                </p>
+                <button type="submit" class="cf-btn" id="cf-submit">
+                  <span id="cf-btn-text">Send Message</span>
+                </button>
+              </div>
+
+              <div class="cf-success" id="cf-success" aria-live="polite">
+                Message sent — we'll be in touch shortly.
+              </div>
+              <div class="cf-error" id="cf-error" aria-live="polite">
+                Something went wrong. Please try WhatsApp or email directly.
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </main>
@@ -433,7 +585,7 @@
             <li><a href="#contact">Contact Us</a></li>
             <li>
               <a href="mailto:hello@ambientelectron.co.za"
-                >ambientelectron.info@gmail.com</a
+                >ambientelctron.info@gmail.com</a
               >
             </li>
             <li>
@@ -450,11 +602,11 @@
           AFRICA
         </div>
         <div class="ft-reg">
-          Reg No: 2026 / 294485 / 07 &nbsp;·&nbsp; B-BBEE Level 1
+          Reg No: 2026/294485/07 &nbsp;·&nbsp; B-BBEE Level 1
         </div>
         <div class="ft-legal">
-          <a href="/pages/privacy-policy.html">Privacy Policy</a>
-          <a href="/pages/terms.html">Terms of Service</a>
+          <a href="/./pages/privacy-policy.html">Privacy Policy</a>
+          <a href="/./pages/terms.html">Terms of Service</a>
         </div>
       </div>
     </footer>

@@ -4,22 +4,10 @@
    How to publish: File > Share > Publish to web > [Tab] > CSV
    ============================================================ */
 const PRICING_URLS = [
-  {
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=791159862&single=true&output=csv",
-    featured: false,
-  }, // Tab 1 — Signal
-  {
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=0&single=true&output=csv",
-    featured: true,
-  }, // Tab 2 — Pulse  (featured)
-  {
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=2098180478&single=true&output=csv",
-    featured: false,
-  }, // Tab 3 — Current
-  {
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=759383848&single=true&output=csv",
-    featured: false,
-  }, // Tab 4 — Maintain
+  { url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=791159862&single=true&output=csv", featured: false }, // Tab 1 — Signal
+  { url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=0&single=true&output=csv", featured: true }, // Tab 2 — Pulse (featured)
+  { url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=2098180478&single=true&output=csv", featured: false }, // Tab 3 — Current
+  { url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=759383848&single=true&output=csv", featured: false }, // Tab 4 — Maintain
   { url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4DqiMHWU5dRUXg9q0BjWfEgr38rIS3xyD6D5gCrYn4fCZdsEMr2O9omO0Qwc8zzRYxwzk-X8oy6zu/pub?gid=381115909&single=true&output=csv", featured: false }, // Tab 5 — Hosting
 ];
 
@@ -38,7 +26,7 @@ const FALLBACK = [
       { label: "Hosting guidance & setup", on: true },
       { label: "2 revision rounds", on: true },
       { label: "CMS / admin panel", on: false },
-      { label: "2 months post-launch support + hosting", on: false },
+      { label: "Ongoing support", on: false },
     ],
   },
   {
@@ -54,7 +42,7 @@ const FALLBACK = [
       { label: "Contact form & basic integrations", on: true },
       { label: "Advanced SEO setup", on: true },
       { label: "Hosting setup & configuration", on: true },
-      { label: "4 months post-launch support + hosting", on: true },
+      { label: "3 months post-launch support", on: true },
       { label: "3 revision rounds", on: true },
     ],
   },
@@ -71,7 +59,7 @@ const FALLBACK = [
       { label: "Advanced forms & integrations", on: true },
       { label: "Full SEO strategy", on: true },
       { label: "Hosting setup & configuration", on: true },
-      { label: "6 months post-launch support + hosting", on: true },
+      { label: "6 months post-launch support", on: true },
       { label: "5 revision rounds", on: true },
       { label: "Priority support", on: true },
     ],
@@ -97,7 +85,8 @@ const FALLBACK = [
     tier: "Hosting",
     pages: "monthly",
     price: "R200",
-    tagline: "Just keep the lights on...",
+    tagline:
+      "Just keep the lights on. Your site stays live and accessible — nothing more, nothing less.",
     featured: false,
     maintain: true,
     features: [
@@ -134,7 +123,7 @@ function renderCard(d, featuredOverride) {
   const featured =
     featuredOverride !== undefined
       ? featuredOverride
-      : d.featured === "true" || d.featured === true || d.featured === "TRUE";
+      : d.featured === "true" || d.featured === true;
   const isMaintain =
     d.maintain === true || d.maintain === "true" || d.maintain === "TRUE";
   const featsHtml = (d.features || [])
@@ -154,7 +143,7 @@ function renderCard(d, featuredOverride) {
     ${priceBlock}
     <p class="pr-note">${d.tagline || ""}</p>
     <ul class="pr-feats">${featsHtml}</ul>
-    <a href="#contact" class="pr-btn">${isMaintain ? "Get Started" : "Get a Quote"}</a>
+    <a href="#contact" class="pr-btn" onclick="setPackage('${d.tier || ""}')">${"Book a Call"}</a>
   </div>`;
 }
 
@@ -166,34 +155,51 @@ async function fetchTier(cfg) {
 }
 
 async function initPricing() {
-  const grid = document.getElementById("pr-grid");
+  const buildGrid = document.getElementById("pr-grid-build");
+  const maintainGrid = document.getElementById("pr-grid-maintain");
   const configured = PRICING_URLS.filter((u) => u.url.trim() !== "");
+
   if (configured.length === 0) {
-    grid.innerHTML = FALLBACK.map((d) => renderCard(d)).join("");
+    buildGrid.innerHTML = FALLBACK.filter((d) => !d.maintain)
+      .map((d) => renderCard(d))
+      .join("");
+    maintainGrid.innerHTML = FALLBACK.filter((d) => d.maintain)
+      .map((d) => renderCard(d))
+      .join("");
     observeFadeIns();
     refreshCursor();
     return;
   }
-  grid.innerHTML = PRICING_URLS.map(
-    () =>
-      `<div class="pr-card" style="opacity:.35"><div class="pr-loading">Loading&hellip;</div></div>`,
-  ).join("");
+
+  buildGrid.innerHTML = `<div class="pr-loading" style="grid-column:1/-1">Loading&hellip;</div>`;
+  maintainGrid.innerHTML = `<div class="pr-loading" style="grid-column:1/-1">Loading&hellip;</div>`;
+
   const results = await Promise.allSettled(
     PRICING_URLS.map((cfg) =>
       cfg.url.trim() ? fetchTier(cfg) : Promise.resolve(null),
     ),
   );
-  let html = "";
+
+  let buildHtml = "",
+    maintainHtml = "";
   results.forEach((r, i) => {
-    if (r.status === "fulfilled" && r.value)
-      html += renderCard(r.value, PRICING_URLS[i].featured);
-    else if (FALLBACK[i]) {
-      html += renderCard(FALLBACK[i]);
-      if (r.status === "rejected")
-        console.warn(`Pricing tier ${i + 1} failed, using fallback.`, r.reason);
-    }
+    const data = r.status === "fulfilled" && r.value ? r.value : FALLBACK[i];
+    if (!data) return;
+    if (r.status === "rejected")
+      console.warn(`Pricing tier ${i + 1} failed, using fallback.`, r.reason);
+    const card = renderCard(data, PRICING_URLS[i].featured);
+    if (
+      data.maintain === true ||
+      data.maintain === "true" ||
+      data.maintain === "TRUE"
+    )
+      maintainHtml += card;
+    else buildHtml += card;
   });
-  grid.innerHTML = html || '<div class="pr-loading">No pricing data.</div>';
+
+  buildGrid.innerHTML = buildHtml || '<div class="pr-loading">No data.</div>';
+  maintainGrid.innerHTML =
+    maintainHtml || '<div class="pr-loading">No data.</div>';
   observeFadeIns();
   refreshCursor();
 }
@@ -301,7 +307,7 @@ observeFadeIns();
 
 /* ── Active nav on scroll ── */
 const navSections = [
-  "about",
+  
   "process",
   "services",
   "pricing",
@@ -320,7 +326,8 @@ window.addEventListener(
     navEl.classList.toggle("scrolled", y > 60);
     // back to top
     document.getElementById("btt").classList.toggle("show", y > 400);
-    document.querySelector(".wa-float").classList.toggle("show", y > 400);
+    document.querySelector('.wa-float').classList.toggle('show', y > 400);
+    
     // active section highlight
     let current = "";
     navSections.forEach((id) => {
@@ -373,11 +380,11 @@ function closeDrawer() {
   hbg.setAttribute("aria-expanded", "false");
   document.body.style.overflow = "";
 }
-document.getElementById("dclose").addEventListener("click", closeDrawer);
-
 hbg.addEventListener("click", () => {
   hbg.classList.contains("open") ? closeDrawer() : openDrawer();
 });
+
+document.getElementById('dclose').addEventListener('click', closeDrawer);
 drawer.addEventListener("click", (e) => {
   if (e.target === drawer) closeDrawer();
 });
@@ -389,6 +396,106 @@ document.addEventListener("keydown", (e) => {
 document.getElementById("btt").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+
+/* ── Contact form ── */
+// Pre-fill package from pricing button
+function setPackage(name) {
+  const sel = document.getElementById("cf-package");
+  if (!sel) return;
+  for (let i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === name) {
+      sel.selectedIndex = i;
+      break;
+    }
+  }
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+}
+
+function validateForm() {
+  let valid = true;
+
+  // clear previous errors
+  document.querySelectorAll('.cf-input.invalid').forEach(el => {
+    el.classList.remove('invalid');
+  });
+  document.querySelectorAll('.cf-field-error').forEach(el => el.remove());
+
+  const fields = [
+    { id: 'cf-name',    label: 'Name',  required: true,  type: 'text'  },
+    { id: 'cf-email',   label: 'Email', required: true,  type: 'email' },
+    { id: 'cf-phone',   label: 'WhatsApp / Phone', required: true, type: 'tel' },
+    { id: 'cf-org',     label: 'Organisation',     required: true, type: 'text'   },
+    { id: 'cf-package', label: 'Package', required: true, type: 'select' },
+    { id: 'cf-message', label: 'Message', required: true, type: 'text' },
+  ];
+
+  fields.forEach(f => {
+    const el = document.getElementById(f.id);
+    if (!el) return;
+    const val = el.value.trim();
+
+    let msg = null;
+
+    if (f.required && !val) {
+      msg = `${f.label} is required`;
+    } else if (val && f.type === 'email') {
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+      if (!emailOk) msg = 'Please enter a valid email address';
+    } else if (val && f.type === 'tel') {
+      const telOk = /^[\d\s\+\-\(\)]{7,15}$/.test(val);
+      if (!telOk) msg = 'Please enter a valid phone number';
+    }
+
+    if (msg) {
+      valid = false;
+      el.classList.add('invalid');
+      const err = document.createElement('span');
+      err.className = 'cf-field-error';
+      err.textContent = msg;
+      el.parentNode.appendChild(err);
+    }
+  });
+
+  return valid;
+}
+
+// Formspree form submission via fetch (no page reload)
+const ctForm = document.getElementById("ct-form");
+if (ctForm) {
+  ctForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!validateForm()) return;
+    const btn = document.getElementById("cf-submit");
+    const btnText = document.getElementById("cf-btn-text");
+    const success = document.getElementById("cf-success");
+    const error = document.getElementById("cf-error");
+
+    btn.disabled = true;
+    btnText.textContent = "Sending…";
+    success.style.display = "none";
+    error.style.display = "none";
+
+    try {
+      const res = await fetch("https://formspree.io/f/xvzdyvdz", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(ctForm),
+      });
+      if (res.ok) {
+        success.style.display = "block";
+        ctForm.reset();
+      } else {
+        throw new Error("Network response not ok");
+      }
+    } catch {
+      error.style.display = "block";
+    } finally {
+      btn.disabled = false;
+      btnText.textContent = "Send Message";
+    }
+  });
+}
 
 /* ── Boot ── */
 initPricing();
