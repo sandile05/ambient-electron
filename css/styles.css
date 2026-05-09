@@ -853,9 +853,18 @@ canvas#cv {
   overflow: hidden;
 }
 .pf-cell.tall .pf-vis { height: 100%; min-height: clamp(300px, 38vw, 460px); }
-.pf-bg1 { background: radial-gradient(ellipse at 30% 40%, #061828, #020810); }
-.pf-bg2 { background: radial-gradient(ellipse at 70% 30%, #0a1810, #020810); }
-.pf-bg3 { background: radial-gradient(ellipse at 50% 60%, #100810, #020810); }
+.pf-bg1 { background-image: url('../assets/school.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;}
+.pf-bg2 { background-image: url('../assets/lu.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;}
+.pf-bg3 { background-image: url('../assets/artist.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;}
 .pf-ghost {
   font-family: "Orbitron", sans-serif;
   font-size: clamp(2.5rem, 7vw, 6rem);
@@ -873,8 +882,13 @@ canvas#cv {
   display: flex;
   align-items: flex-end;
   padding: clamp(16px, 2.5vw, 28px) clamp(16px, 2.5vw, 32px);
-  background: linear-gradient(to top, rgba(2, 8, 16, 0.9) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(2, 8, 16, 0.97) 0%, rgba(2, 8, 16, 0.75) 50%, rgba(2, 8, 16, 0.5) 100%);
+  transition: background 0.4s;
 }
+.pf-cell:hover .pf-overlay {
+  background: linear-gradient(to top, rgba(2, 8, 16, 1) 0%, rgba(2, 8, 16, 0.92) 60%, rgba(2, 8, 16, 0.75) 100%);
+}
+
 .pf-kind {
   font-family: "DM Mono", monospace;
   font-size: 0.52rem;
