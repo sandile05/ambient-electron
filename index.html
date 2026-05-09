@@ -1,655 +1,646 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Ambient Electron - Web Design & Development Studio | South Africa
-    </title>
-    <link rel="stylesheet" href="./css/styles.css" />
-    <meta
-      name="description"
-      content="Ambient Electron is a proudly black-owned South African web design and development studio. We build elegant, high-performance websites for organisations that refuse to blend in."
-    />
-    <meta
-      name="keywords"
-      content="web design South Africa, website development South Africa, web agency Johannesburg, school website design, black owned web studio, affordable website design SA"
-    />
-    <meta name="author" content="Ambient Electron (Pty) Ltd" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.ambientelectron.co.za/" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Ambient Electron (Pty) Ltd",
-        "url": "https://www.ambientelectron.co.za",
-        "logo": "https://www.ambientelectron.co.za/logo.png",
-        "description": "Proudly black-owned South African web design and development studio.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Johannesburg",
-          "addressRegion": "Gauteng",
-          "addressCountry": "ZA"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "telephone": "+27749258393",
-          "email": "ambientelectron.info@gmail.com",
-          "availableLanguage": "English"
-        },
-        "sameAs": []
-      }
-    </script>
-  </head>
+<title>Ambient Electron — Web Design & Development Studio | South Africa</title>
+<meta name="description" content="Ambient Electron is a proudly black-owned South African web design and development studio. We build elegant, high-performance websites for organisations that refuse to blend in.">
+<meta name="keywords" content="web design South Africa, website development South Africa, web agency Johannesburg, school website design, black owned web studio, affordable website design SA">
+<meta name="author" content="Ambient Electron (Pty) Ltd">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.ambientelectron.co.za/">
 
-  <body>
-    <a href="#main" class="skip-link">Skip to content</a>
-    <div id="cur"></div>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ambientelectron.co.za/">
+<meta property="og:title" content="Ambient Electron — Web Design & Development | South Africa">
+<meta property="og:description" content="Proudly black-owned South African web studio. Elegant, high-performance websites for organisations that refuse to blend in.">
+<meta property="og:image" content="https://www.ambientelectron.co.za/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Ambient Electron">
+<meta property="og:locale" content="en_ZA">
 
-    <!-- DRAWER -->
-    <
-    <div
-      class="drawer"
-      id="drawer"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Navigation menu"
-    >
-      <div class="drawer-inner">
-        <button class="drawer-close" id="dclose" aria-label="Close menu">
-          ✕
-        </button>
-        <a href="#services" onclick="closeDrawer()">Services</a>
-        <a href="#process" onclick="closeDrawer()">Process</a>
-        <a href="#pricing" onclick="closeDrawer()">Pricing</a>
-        <a href="#portfolio" onclick="closeDrawer()">Portfolio</a>
-        <a href="#contact" onclick="closeDrawer()">Contact</a>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ambient Electron — Web Design & Development | South Africa">
+<meta name="twitter:description" content="Proudly black-owned South African web studio. Elegant, high-performance websites for organisations that refuse to blend in.">
+<meta name="twitter:image" content="https://www.ambientelectron.co.za/og-image.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Ambient Electron (Pty) Ltd",
+  "url": "https://www.ambientelectron.co.za",
+  "logo": "https://www.ambientelectron.co.za/logo.png",
+  "description": "Proudly black-owned South African web design and development studio.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Johannesburg",
+    "addressRegion": "Gauteng",
+    "addressCountry": "ZA"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "telephone": "+27749258393",
+    "email": "ambientelectron.info@gmail.com",
+    "availableLanguage": "English"
+  },
+  "sameAs": []
+}
+</script>
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#020810">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@300;400;600;700&family=DM+Mono:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="cur"></div>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="drawer-inner">
+    <button class="drawer-close" id="dclose" aria-label="Close menu">✕</button>
+    <a href="#services"  onclick="closeDrawer()">Services</a>
+    <a href="#process"   onclick="closeDrawer()">Process</a>
+    <a href="#pricing"   onclick="closeDrawer()">Pricing</a>
+    <a href="#portfolio" onclick="closeDrawer()">Portfolio</a>
+    <a href="#contact"   onclick="closeDrawer()">Contact</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="nb" aria-label="Ambient Electron home">AMBIENT<span>.</span>ELECTRON</a>
+  <ul class="nl">
+    <li><a href="#services"  data-nav="services">Services</a></li>
+    <li><a href="#process"   data-nav="process">Process</a></li>
+    <li><a href="#pricing"   data-nav="pricing">Pricing</a></li>
+    <li><a href="#portfolio" data-nav="portfolio">Portfolio</a></li>
+    <li><a href="#contact"   data-nav="contact">Contact</a></li>
+  </ul>
+  <button class="hbg" id="hbg" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main id="main">
+
+<!-- HERO -->
+<section id="hero" aria-label="Hero">
+  <canvas id="cv" aria-hidden="true"></canvas>
+  <div class="h-top">
+    <p class="h-tag">Web presence that works<br>quietly in the background.<br>Powerful by nature.</p>
+  </div>
+  <div class="h-bottom">
+    <h1 class="h-electron">
+      <span class="h-el-top">AMBIENT</span>
+      <span class="h-el-bot"><span class="lit">ELE</span><span class="lit2">CTR</span><span class="lit">ON</span></span>
+    </h1>
+    <div class="h-sub">
+      <span class="h-loc">South Africa &mdash; Web Studio</span>
+      <div class="h-ctas">
+        <a href="#services" class="h-cta">Explore our work</a>
+        <span class="h-cta-div" aria-hidden="true"></span>
+        <a href="#contact" class="h-cta">Get in Touch</a>
       </div>
     </div>
-    <!-- NAV -->
-    <nav id="nav" role="navigation" aria-label="Main navigation">
-      <a href="#hero" class="nb" aria-label="Ambient Electron home"
-        >AMBIENT<span>.</span>ELECTRON</a
-      >
-      <ul class="nl">
-        <li><a href="#services" data-nav="services">Services</a></li>
-        <li><a href="#process" data-nav="process">Process</a></li>
-        <li><a href="#pricing" data-nav="pricing">Pricing</a></li>
-        <li><a href="#portfolio" data-nav="portfolio">Portfolio</a></li>
-        <li><a href="#contact" data-nav="contact">Contact</a></li>
+  </div>
+</section>
+
+<div class="sep" aria-hidden="true"></div>
+
+<!-- ABOUT -->
+<section class="sec" id="about" aria-labelledby="about-heading" style="padding-top:90px;padding-bottom:90px">
+  <div class="ab-wrap">
+    <div class="ab-label" aria-hidden="true">About</div>
+    <p class="ab-text fade-in" id="about-heading">
+      We are a proudly <em>black-owned</em> South African web studio that builds elegant,
+      high-performance digital presences for organisations that refuse to blend in.
+      Technology that operates in the background — always on, always precise.
+    </p>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats" role="list" aria-label="Studio statistics">
+  <div class="stat fade-in" role="listitem">
+    <div class="stat-num">ZA</div>
+    <div class="stat-lbl">100% Black-owned studio</div>
+  </div>
+  <div class="stat fade-in" role="listitem">
+    <div class="stat-num">&lt;2s</div>
+    <div class="stat-lbl">Target page load time</div>
+  </div>
+  <div class="stat fade-in" role="listitem">
+    <div class="stat-num">YOU</div>
+    <div class="stat-lbl">Every project handled personally</div>
+  </div>
+  <div class="stat fade-in" role="listitem">
+    <div class="stat-num">∞</div>
+    <div class="stat-lbl">Ongoing support available</div>
+  </div>
+</div>
+
+<div class="sep" aria-hidden="true"></div>
+
+<!-- PROCESS -->
+<section class="sec sec-d" id="process" aria-labelledby="process-heading">
+  <h2 class="s-h fade-in" id="process-heading">How We Work</h2>
+  <div class="proc-grid">
+    <div class="proc-step fade-in">
+      <div class="proc-n">01 — See It</div>
+      <h3 class="proc-title">Experience It First</h3>
+      <p class="proc-body">You see a fully built, live example before committing to anything. No mood boards, no guesswork — you know exactly what you're getting from day one.</p>
+    </div>
+    <div class="proc-step fade-in">
+      <div class="proc-n">02 — Personalise It</div>
+      <h3 class="proc-title">Made for You</h3>
+      <p class="proc-body">We adapt the foundation to your identity — your colours, logo, content, and tone. A proven structure, built specifically around your organisation.</p>
+    </div>
+    <div class="proc-step fade-in">
+      <div class="proc-n">03 — Refine It</div>
+      <h3 class="proc-title">Until It's Right</h3>
+      <p class="proc-body">You review and we adjust. Every package includes dedicated revision rounds so you have full input without the back-and-forth of starting from scratch.</p>
+    </div>
+    <div class="proc-step fade-in">
+      <div class="proc-n">04 — Launch It</div>
+      <h3 class="proc-title">Live & Supported</h3>
+      <p class="proc-body">We deploy, test across all devices, and hand over with full guidance. Ongoing maintenance keeps everything running long after launch day.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sep" aria-hidden="true"></div>
+
+<!-- SERVICES -->
+<section class="sec" id="services" aria-labelledby="services-heading">
+  <h2 class="s-h fade-in" id="services-heading">What We Build</h2>
+  <ul class="sv-list">
+    <li class="sv-item fade-in">
+      <div class="sv-head" role="button" tabindex="0" aria-expanded="false">
+        <span class="sv-name">Website Design &amp; Development</span>
+        <div class="sv-arrow" aria-hidden="true">↗</div>
+      </div>
+      <div class="sv-body">
+        <p>Proven, high-performance websites adapted to your organisation's identity. You see a live example first — then we tailor the colours, content, structure, and branding to make it completely yours. Fast, responsive, and built to last.</p>
+        <div class="sv-chips" aria-label="Technologies and features">
+          <span class="chip">Custom Design</span>
+          <span class="chip">Responsive</span>
+          <span class="chip">CMS Integration</span>
+          <span class="chip">SEO Ready</span>
+          <span class="chip">Performance Optimised</span>
+        </div>
+      </div>
+    </li>
+    <li class="sv-item fade-in">
+      <div class="sv-head" role="button" tabindex="0" aria-expanded="false">
+        <span class="sv-name">Website Maintenance &amp; Support</span>
+        <div class="sv-arrow" aria-hidden="true">↗</div>
+      </div>
+      <div class="sv-body">
+        <p>Your website is a living asset. We keep it running flawlessly — content updates, security monitoring, performance tuning, and ongoing support so you can focus on what you do best.</p>
+        <div class="sv-chips" aria-label="Services included">
+          <span class="chip">Content Updates</span>
+          <span class="chip">Security Monitoring</span>
+          <span class="chip">Performance Audits</span>
+          <span class="chip">Priority Support</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<div class="sep" aria-hidden="true"></div>
+
+<!-- PRICING -->
+<section class="sec sec-d" id="pricing" aria-labelledby="pricing-heading">
+  <h2 class="s-h fade-in" id="pricing-heading">Transparent Pricing</h2>
+  <p class="p-intro fade-in">Pricing starts from R3,500. Every project is scoped to your specific needs — book a call and we'll give you a clear number within 24 hours.</p>
+
+  <p class="pr-section-label fade-in">Build</p>
+  <div class="pt-wrap fade-in">
+    <table class="pt" role="table" aria-label="Build pricing">
+      <thead>
+        <tr>
+          <th class="pt-label-col"></th>
+          <th>
+            <span class="pt-tier">Signal</span>
+            <div class="pt-pages">1–3 <sub>pages</sub></div>
+            <div class="pt-price">From R3,500</div>
+          </th>
+          <th class="pt-featured">
+            <span class="pt-tier">Pulse — Most Popular</span>
+            <div class="pt-pages">4–8 <sub>pages</sub></div>
+            <div class="pt-price">From R8,500</div>
+          </th>
+          <th>
+            <span class="pt-tier">Current</span>
+            <div class="pt-pages">9+ <sub>pages</sub></div>
+            <div class="pt-price">From R12,000</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Mobile responsive</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Contact / WhatsApp integration</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Basic SEO setup</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Domain & hosting setup</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">CMS / admin panel</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Advanced SEO</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Smooth animations</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Full SEO strategy</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-dash">—</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Custom interactions & layouts</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-dash">—</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Integrations & automation</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-dash">—</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Analytics setup</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-dash">—</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Priority support</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-dash">—</span></td>
+          <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Revision rounds</td>
+          <td>2 rounds</td>
+          <td class="pt-featured">3 rounds</td>
+          <td>5 rounds</td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Hosting included</td>
+          <td>3 months</td>
+          <td class="pt-featured">6 months</td>
+          <td>12 months</td>
+        </tr>
+        <tr class="pt-row-price">
+          <td class="pt-label-col"></td>
+          <td class="pt-btn-cell"><a href="#contact" class="pt-btn" onclick="setPackage('Signal')">Book a Call</a></td>
+          <td class="pt-featured pt-btn-cell"><a href="#contact" class="pt-btn" onclick="setPackage('Pulse')">Book a Call</a></td>
+          <td class="pt-btn-cell"><a href="#contact" class="pt-btn" onclick="setPackage('Current')">Book a Call</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="pr-section-label fade-in" style="margin-top:48px">Ongoing</p>
+  <div class="pt-wrap fade-in">
+    <table class="pt" role="table" aria-label="Ongoing pricing">
+      <thead>
+        <tr>
+          <th class="pt-label-col"></th>
+          <th>
+            <span class="pt-tier">Care</span>
+            <div class="pt-monthly">R600 <sub>/month</sub></div>
+            <div class="pt-price" style="margin-top:6px">Hosting & maintenance</div>
+          </th>
+          <th class="pt-featured">
+            <span class="pt-tier">Care+</span>
+            <div class="pt-monthly">From R1,200 <sub>/month</sub></div>
+            <div class="pt-price" style="margin-top:6px">Priority & growth</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Managed hosting</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Domain support</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Uptime monitoring</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Security checks</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Performance monitoring</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Backups</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Minor content updates</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Technical support</td>
+          <td><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Priority response</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Monthly analytics report</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">SEO monitoring</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Ongoing optimisation</td>
+          <td><span class="pt-dash">—</span></td>
+          <td class="pt-featured"><span class="pt-check">✓</span></td>
+        </tr>
+        <tr class="pt-row-price">
+          <td class="pt-label-col"></td>
+          <td class="pt-btn-cell"><a href="#contact" class="pt-btn" onclick="setPackage('Care')">Book a Call</a></td>
+          <td class="pt-featured pt-btn-cell"><a href="#contact" class="pt-btn" onclick="setPackage('Care+')">Book a Call</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pt-addons fade-in">
+    <p class="pt-addons-title">Optional Add-Ons</p>
+    <div class="pt-addons-chips">
+      <span class="pt-addon-chip">Additional pages</span>
+      <span class="pt-addon-chip">E-commerce</span>
+      <span class="pt-addon-chip">Booking systems</span>
+      <span class="pt-addon-chip">Blog setup</span>
+      <span class="pt-addon-chip">Email integrations</span>
+      <span class="pt-addon-chip">Branding assistance</span>
+      <span class="pt-addon-chip">Copywriting</span>
+      <span class="pt-addon-chip">Custom animations</span>
+      <span class="pt-addon-chip">SEO campaigns</span>
+      <span class="pt-addon-chip">Additional revisions</span>
+    </div>
+  </div>
+
+  <div class="pr-call fade-in">
+    <p class="pr-call-text">Not sure which package fits? Let's figure it out together.</p>
+    <a href="#contact" class="pr-call-btn" onclick="setPackage('Book a Call')">Book a Call</a>
+  </div>
+</section>
+
+<div class="sep" aria-hidden="true"></div>
+
+<!-- TESTIMONIALS -->
+<section class="sec" id="testimonials" aria-labelledby="tm-heading">
+  <!-- <h2 class="s-h fade-in" id="tm-heading">What Clients Say</h2>
+  <div class="tm-grid">
+    <div class="tm-card fade-in">
+      <p class="tm-quote">The team at Ambient Electron delivered far beyond what we expected. Our new website has transformed how parents and prospective families perceive our school.</p>
+      <div class="tm-name">Principal M. Dlamini</div>
+      <div class="tm-org">Excellence High School</div>
+    </div>
+    <div class="tm-card fade-in">
+      <p class="tm-quote">Elegant, fast, and exactly on-brand. The process was seamless from discovery to launch. We felt heard every step of the way.</p>
+      <div class="tm-name">Admin Director</div>
+      <div class="tm-org">Sunrise Primary School</div>
+    </div>
+    <div class="tm-card fade-in">
+      <p class="tm-quote">We needed a site that could handle multiple campuses and complex content. Ambient Electron built exactly that — and made it look effortless.</p>
+      <div class="tm-name">Communications Lead</div>
+      <div class="tm-org">Greenfield Academy</div>
+    </div>
+  </div> -->
+</section>
+
+<div class="sep" aria-hidden="true"></div>
+
+<!-- PORTFOLIO -->
+<section class="sec sec-d" id="portfolio" aria-labelledby="portfolio-heading">
+  <h2 class="s-h fade-in" id="portfolio-heading">Live Work</h2>
+  <div class="pf-layout">
+    <div class="pf-cell tall pf-bg1 fade-in">
+      <div class="pf-vis"><span class="pf-ghost" aria-hidden="true">HS</span></div>
+      <div class="pf-overlay">
+        <div>
+          <div class="pf-kind">High School</div>
+          <div class="pf-title">Excellence High School</div>
+          <p class="pf-desc">Excellence High School's complete digital presence. Live news and announcements, exam timetables, full admissions flow, staff profiles, subject catalogue, and parent contact hub — all in one elegant platform.</p>
+          <a href="https://demo-school1.netlify.app/" class="pf-link" target="_blank" rel="noopener noreferrer">View Live Site ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pf-cell pf-bg2 fade-in">
+      <div class="pf-vis"><span class="pf-ghost" aria-hidden="true">PS</span></div>
+      <div class="pf-overlay">
+        <div>
+          <div class="pf-kind">Primary School</div>
+          <div class="pf-title">Coming Soon</div>
+          <p class="pf-desc">A warm, welcoming primary school website — currently in development.</p>
+          <span class="pf-soon">In Progress</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep" aria-hidden="true"></div>
+
+<!-- CONTACT -->
+<section class="sec" id="contact" aria-labelledby="contact-heading">
+  <h2 class="s-h fade-in" id="contact-heading">Start a Conversation</h2>
+  <div class="ct-layout">
+
+    <div class="ct-channels">
+      <a href="https://wa.me/27749258393" class="ct-ch fade-in" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+        <div class="ct-ico" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+        <div class="ct-lbl">WhatsApp</div>
+        <div class="ct-val">+27 74 925 8393</div>
+      </a>
+      <a href="mailto:ambientelectron.info@gmail.com" class="ct-ch fade-in" aria-label="Send us an email">
+        <div class="ct-ico" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M2 7l10 7 10-7"/>
+          </svg>
+        </div>
+        <div class="ct-lbl">Email</div>
+        <div class="ct-val">ambientelectron.info@gmail.com</div>
+      </a>
+      <a href="tel:+27749258393" class="ct-ch fade-in" aria-label="Call us">
+        <div class="ct-ico" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.01 21 3 13.99 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
+          </svg>
+        </div>
+        <div class="ct-lbl">Phone</div>
+        <div class="ct-val">+27 74 925 8393</div>
+      </a>
+    </div>
+
+    <div class="ct-form-wrap fade-in">
+      <form action="https://formspree.io/f/xvzdyvdz" method="POST" id="ct-form" novalidate>
+        <div class="cf-row">
+          <div class="cf-group">
+            <label class="cf-label" for="cf-name">Name</label>
+            <input class="cf-input" type="text" id="cf-name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label" for="cf-org">Organisation</label>
+            <input class="cf-input" type="text" id="cf-org" name="organisation" placeholder="School or company name" required>
+          </div>
+        </div>
+        <div class="cf-row">
+          <div class="cf-group">
+            <label class="cf-label" for="cf-email">Email</label>
+            <input class="cf-input" type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label" for="cf-phone">WhatsApp / Phone</label>
+            <input class="cf-input" type="tel" id="cf-phone" name="phone" placeholder="+27 00 000 0000" required>
+          </div>
+        </div>
+        <div class="cf-group">
+          <label class="cf-label" for="cf-package">Package of Interest</label>
+          <select class="cf-input cf-select" id="cf-package" name="package" required>
+            <option value="">Select a package…</option>
+            <option value="Signal">Signal — 1–3 pages</option>
+            <option value="Pulse">Pulse — 4–8 pages</option>
+            <option value="Current">Current — 9+ pages</option>
+            <option value="Care">Care — R600/month</option>
+            <option value="Care+">Care+ — From R1,200/month</option>
+            <option value="Book a Call">Book a Call — general enquiry</option>
+            <option value="Not sure">Not sure yet</option>
+          </select>
+        </div>
+        <div class="cf-group">
+          <label class="cf-label" for="cf-message">Message</label>
+          <textarea class="cf-input cf-textarea" id="cf-message" name="message" placeholder="Tell us about your project…" rows="4" required></textarea>
+        </div>
+        <div class="cf-footer">
+          <p class="cf-note">By submitting you agree to our <a href="/privacy-policy">Privacy Policy</a>. We respond within 1 business day.</p>
+          <button type="submit" class="cf-btn" id="cf-submit">
+            <span id="cf-btn-text">Send Message</span>
+          </button>
+        </div>
+        <div class="cf-success" id="cf-success" aria-live="polite">Message sent — we'll be in touch shortly.</div>
+        <div class="cf-error" id="cf-error" aria-live="polite">Something went wrong. Please try WhatsApp or email directly.</div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="ft-top">
+    <div class="ft-brand-block">
+      <span class="ft-logo">AMBIENT<span>.</span>ELECTRON</span>
+      <p>South African web design and development studio. Elegant, high-performance digital presences for organisations that refuse to blend in.</p>
+    </div>
+    <div class="ft-col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
       </ul>
-      <button
-        class="hbg"
-        id="hbg"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-      >
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
+    </div>
+    <div class="ft-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="mailto:ambientelectron.info@gmail.com">ambientelectron.info@gmail.com</a></li>
+        <li><a href="https://wa.me/27749258393" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2025 AMBIENT ELECTRON (PTY) LTD — ALL RIGHTS RESERVED — SOUTH AFRICA</div>
+    <div class="ft-legal">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+    </div>
+  </div>
+</footer>
 
-    <main id="main">
-      <!-- HERO -->
-      <section id="hero" aria-label="Hero">
-        <canvas id="cv" aria-hidden="true"></canvas>
-        <div class="h-top">
-          <p class="h-tag">
-            Web presence that works<br />quietly in the background.<br />Powerful
-            by nature.
-          </p>
-        </div>
-        <div class="h-bottom">
-          <h1 class="h-electron">
-            <span class="h-el-top">AMBIENT</span>
-            <span class="h-el-bot"
-              ><span class="lit">ELE</span><span class="lit2">CTR</span
-              ><span class="lit">ON</span></span
-            >
-          </h1>
-          <div class="h-sub">
-            <span class="h-loc">South Africa &mdash; Web Studio</span>
-            <div class="h-ctas">
-              <a href="#services" class="h-cta">Explore our work</a>
-              <span class="h-cta-div" aria-hidden="true"></span>
-              <a href="#contact" class="h-cta">Get in Touch</a>
-            </div>
-          </div>
-        </div>
-      </section>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/27749258393" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">💬</a>
 
-      <div class="sep" aria-hidden="true"></div>
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" aria-label="Back to top" title="Back to top">↑</button>
 
-      <!-- ABOUT -->
-      <section
-        class="sec"
-        aria-labelledby="about-heading"
-        style="padding-top: 90px; padding-bottom: 90px"
-      >
-        <div class="ab-wrap">
-          <div class="ab-label" aria-hidden="true">About</div>
-          <p class="ab-text fade-in" id="about-heading">
-            We are a proudly <em>black-owned</em> South African web studio that
-            builds elegant, high-performance digital presences for organisations
-            that refuse to blend in. Technology that operates in the background
-            — always on, always precise.
-          </p>
-        </div>
-      </section>
-
-      <!-- STATS STRIP -->
-      <div class="stats" role="list" aria-label="Studio statistics">
-        <div class="stat fade-in" role="listitem">
-          <div class="stat-num">ZA</div>
-          <div class="stat-lbl">100% Black-owned studio</div>
-        </div>
-        <div class="stat fade-in" role="listitem">
-          <div class="stat-num">&lt;2s</div>
-          <div class="stat-lbl">Target page load time</div>
-        </div>
-        <div class="stat fade-in" role="listitem">
-          <div class="stat-num">1:1</div>
-          <div class="stat-lbl">Every project handled personally</div>
-        </div>
-        <div class="stat fade-in" role="listitem">
-          <div class="stat-num">∞</div>
-          <div class="stat-lbl">Ongoing support available</div>
-        </div>
-      </div>
-
-      <div class="sep" aria-hidden="true"></div>
-
-      <!-- PROCESS -->
-      <section class="sec sec-d" id="process" aria-labelledby="process-heading">
-        <h2 class="s-h fade-in" id="process-heading">How We Work</h2>
-        <div class="proc-grid">
-          <div class="proc-step fade-in">
-            <div class="proc-n">01 — See It</div>
-            <h3 class="proc-title">Experience It First</h3>
-            <p class="proc-body">
-              You see a fully built, live example before committing to anything.
-              No mood boards, no guesswork — you know exactly what you're
-              getting from day one.
-            </p>
-          </div>
-          <div class="proc-step fade-in">
-            <div class="proc-n">02 — Personalise It</div>
-            <h3 class="proc-title">Made for You</h3>
-            <p class="proc-body">
-              We adapt the foundation to your identity — your colours, logo,
-              content, and tone. A proven structure, built specifically around
-              your organisation.
-            </p>
-          </div>
-          <div class="proc-step fade-in">
-            <div class="proc-n">03 — Refine It</div>
-            <h3 class="proc-title">Until It's Right</h3>
-            <p class="proc-body">
-              You review and we adjust. Every package includes dedicated
-              revision rounds so you have full input without the back-and-forth
-              of starting from scratch.
-            </p>
-          </div>
-          <div class="proc-step fade-in">
-            <div class="proc-n">04 — Launch It</div>
-            <h3 class="proc-title">Live & Supported</h3>
-            <p class="proc-body">
-              We deploy, test across all devices, and hand over with full
-              guidance. Ongoing maintenance keeps everything running long after
-              launch day.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <div class="sep" aria-hidden="true"></div>
-
-      <!-- SERVICES -->
-      <section class="sec" id="services" aria-labelledby="services-heading">
-        <h2 class="s-h fade-in" id="services-heading">What We Build</h2>
-        <ul class="sv-list">
-          <li class="sv-item fade-in">
-            <div
-              class="sv-head"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              <span class="sv-name">Website Design &amp; Development</span>
-              <div class="sv-arrow" aria-hidden="true">↗</div>
-            </div>
-            <div class="sv-body">
-              <p>
-                Proven, high-performance websites adapted to your organisation's
-                identity. You see a live example first — then we tailor the
-                colours, content, structure, and branding to make it completely
-                yours. Fast, responsive, and built to last.
-              </p>
-              <div class="sv-chips" aria-label="Technologies and features">
-                <span class="chip">Custom Design</span>
-                <span class="chip">Responsive</span>
-                <span class="chip">CMS Integration</span>
-                <span class="chip">SEO Ready</span>
-                <span class="chip">Performance Optimised</span>
-              </div>
-            </div>
-          </li>
-          <li class="sv-item fade-in">
-            <div
-              class="sv-head"
-              role="button"
-              tabindex="0"
-              aria-expanded="false"
-            >
-              <span class="sv-name">Website Maintenance &amp; Support</span>
-              <div class="sv-arrow" aria-hidden="true">↗</div>
-            </div>
-            <div class="sv-body">
-              <p>
-                Your website is a living asset. We keep it running flawlessly —
-                content updates, security monitoring, performance tuning, and
-                ongoing support so you can focus on what you do best.
-              </p>
-              <div class="sv-chips" aria-label="Services included">
-                <span class="chip">Content Updates</span>
-                <span class="chip">Security Monitoring</span>
-                <span class="chip">Performance Audits</span>
-                <span class="chip">Priority Support</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </section>
-
-      <div class="sep" aria-hidden="true"></div>
-
-      <!-- PRICING -->
-      <section class="sec sec-d" id="pricing" aria-labelledby="pricing-heading">
-        <h2 class="s-h fade-in" id="pricing-heading">Transparent Pricing</h2>
-        <p class="p-intro fade-in">
-          Pricing starts from R3,500. Every project is scoped to your specific
-          needs — book a call and we'll give you a clear number within 24 hours.
-        </p>
-
-        <p class="pr-section-label fade-in">Build</p>
-        <div
-          class="pr-grid pr-grid-build"
-          id="pr-grid-build"
-          role="list"
-          aria-label="Build pricing tiers"
-        >
-          <div class="pr-loading" style="grid-column: 1/-1" aria-live="polite">
-            Loading pricing&hellip;
-          </div>
-        </div>
-
-        <p class="pr-section-label fade-in" style="margin-top: 48px">Ongoing</p>
-        <div
-          class="pr-grid pr-grid-maintain"
-          id="pr-grid-maintain"
-          role="list"
-          aria-label="Ongoing pricing tiers"
-        >
-          <div class="pr-loading" style="grid-column: 1/-1" aria-live="polite">
-            Loading pricing&hellip;
-          </div>
-        </div>
-
-        <div class="pr-call fade-in">
-          <p class="pr-call-text">
-            Not sure which package fits? Let's figure it out together.
-          </p>
-          <a
-            href="#contact"
-            class="pr-call-btn"
-            onclick="setPackage('Book a Call')"
-            >Book a Call</a
-          >
-        </div>
-      </section>
-
-      <div class="sep" aria-hidden="true"></div>
-
-      <!-- TESTIMONIALS -->
-      <section class="sec" id="testimonials" aria-labelledby="tm-heading">
-        <h2 class="s-h fade-in" id="tm-heading">What Clients Say</h2>
-        <div class="tm-grid">
-          <div class="tm-card fade-in">
-            <p class="tm-quote">
-              The team at Ambient Electron delivered far beyond what we
-              expected. Our new website has transformed how parents and
-              prospective families perceive our school.
-            </p>
-            <div class="tm-name">Principal M. Dlamini</div>
-            <div class="tm-org">Northridge High School</div>
-          </div>
-          <div class="tm-card fade-in">
-            <p class="tm-quote">
-              Elegant, fast, and exactly on-brand. The process was seamless from
-              discovery to launch. We felt heard every step of the way.
-            </p>
-            <div class="tm-name">Admin Director</div>
-            <div class="tm-org">Sunrise Primary School</div>
-          </div>
-          <div class="tm-card fade-in">
-            <p class="tm-quote">
-              We needed a site that could handle multiple campuses and complex
-              content. Ambient Electron built exactly that — and made it look
-              effortless.
-            </p>
-            <div class="tm-name">Communications Lead</div>
-            <div class="tm-org">Greenfield Academy</div>
-          </div>
-        </div>
-      </section>
-
-      <div class="sep" aria-hidden="true"></div>
-
-      <!-- PORTFOLIO -->
-      <section
-        class="sec sec-d"
-        id="portfolio"
-        aria-labelledby="portfolio-heading"
-      >
-        <h2 class="s-h fade-in" id="portfolio-heading">Live Work</h2>
-        <div class="pf-layout">
-          <div class="pf-cell tall pf-bg1 fade-in">
-            <div class="pf-vis">
-              <span class="pf-ghost" aria-hidden="true">HS</span>
-            </div>
-            <div class="pf-overlay">
-              <div>
-                <div class="pf-kind">High School</div>
-                <div class="pf-title">Excellence High School</div>
-                <p class="pf-desc">
-                  Excellence High School's complete digital presence. Live news and announcements, exam timetables, full admissions flow, staff profiles, subject catalogue, and parent contact hub - all in one elegant platform.
-                </p>
-                <a
-                  href="https://school-demo-peach.vercel.app/"
-                  class="pf-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >View Live Site ↗</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="pf-cell pf-bg2 fade-in">
-            <div class="pf-vis">
-              <span class="pf-ghost" aria-hidden="true">PS</span>
-            </div>
-            <div class="pf-overlay">
-              <div>
-                <div class="pf-kind">EPK</div>
-                <div class="pf-title">Urban Rapper EPK</div>
-                <p class="pf-desc">
-                  An immersive electronic press kit for an urban rap artist, showcasing music, visuals, performance media, and artist identity in one cinematic digital experience.
-                </p>
-                <a
-                  href="https://epk-pi.vercel.app/"
-                  class="pf-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >View Live Site ↗</a>
-              </div>
-            </div>
-          </div>
-          <div class="pf-cell pf-bg2 fade-in">
-            <div class="pf-vis">
-              <span class="pf-ghost" aria-hidden="true">PS</span>
-            </div>
-            <div class="pf-overlay">
-              <div>
-                <div class="pf-kind">beauty</div>
-                <div class="pf-title">site for cosmetics ladies</div>
-                <p class="pf-desc">
-                  Beauty 
-                </p>
-                <a
-                  href="https://lumiere-xi-sage.vercel.app/"
-                  class="pf-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >View Live Site ↗</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="sep" aria-hidden="true"></div>
-
-      <!-- CONTACT -->
-      <section class="sec" id="contact" aria-labelledby="contact-heading">
-        <h2 class="s-h fade-in" id="contact-heading">Start a Conversation</h2>
-
-        <div class="ct-layout">
-          <!-- Channel links -->
-          <div class="ct-channels">
-            <a
-              href="https://wa.me/27749258393"
-              class="ct-ch fade-in"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contact us on WhatsApp"
-            >
-              <div class="ct-ico" aria-hidden="true">💬</div>
-              <div class="ct-lbl">WhatsApp</div>
-              <div class="ct-val">+27 74 925 8393</div>
-            </a>
-            <a
-              href="mailto:ambientelectron.info@gmail.com"
-              class="ct-ch fade-in"
-              aria-label="Send us an email"
-            >
-              <div class="ct-ico" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="2" y="4" width="20" height="16" rx="2"/>
-          <path d="M2 7l10 7 10-7"/>
-        </svg>
-              </div>
-              <div class="ct-lbl">Email</div>
-              <div class="ct-val">ambientelectron.info@gmail.com</div>
-            </a>
-            <a
-              href="tel:+27749258393"
-              class="ct-ch fade-in"
-              aria-label="Call us"
-            >
-              <div class="ct-ico" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.01 21 3 13.99 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
-        </svg>
-              </div>
-              <div class="ct-lbl">Phone</div>
-              <div class="ct-val">+27 74 925 8393</div>
-            </a>
-          </div>
-
-          <!-- Contact form -->
-          <div class="ct-form-wrap fade-in">
-            <form
-              action="https://formspree.io/f/xvzdyvdz"
-              method="POST"
-              id="ct-form"
-              novalidate
-            >
-             
-              <div class="cf-row">
-                <div class="cf-group">
-                  <label class="cf-label" for="cf-name">Name</label>
-                  <input
-                    class="cf-input"
-                    type="text"
-                    id="cf-name"
-                    name="name"
-                    placeholder="Your full name"
-                    required
-                  />
-                </div>
-                <div class="cf-group">
-                  <label class="cf-label" for="cf-org">Organisation</label>
-                  <input
-                    class="cf-input"
-                    type="text"
-                    id="cf-org"
-                    name="organisation"
-                    placeholder="School or company name"
-                  />
-                </div>
-              </div>
-
-              <div class="cf-row">
-                <div class="cf-group">
-                  <label class="cf-label" for="cf-email">Email</label>
-                  <input
-                    class="cf-input"
-                    type="email"
-                    id="cf-email"
-                    name="email"
-                    placeholder="your@email.com"
-                    required
-                  />
-                </div>
-                <div class="cf-group">
-                  <label class="cf-label" for="cf-phone"
-                    >WhatsApp / Phone</label
-                  >
-                  <input
-                    class="cf-input"
-                    type="tel"
-                    id="cf-phone"
-                    name="phone"
-                    placeholder="+27 00 000 0000"
-                  />
-                </div>
-              </div>
-
-              <div class="cf-group">
-                <label class="cf-label" for="cf-package"
-                  >Package of Interest</label
-                >
-                <select
-                  class="cf-input cf-select"
-                  id="cf-package"
-                  name="package"
-                >
-                  <option value="">Select a package…</option>
-                  <option value="Signal">Signal — 1–3 pages</option>
-                  <option value="Pulse">Pulse — 4–8 pages</option>
-                  <option value="Current">Current — 9+ pages</option>
-                  <option value="Maintain">Maintain — Monthly retainer</option>
-                  <option value="Hosting">Hosting only — R200/month</option>
-                  <option value="Book a Call">
-                    Book a Call — general enquiry
-                  </option>
-                  <option value="Not sure">Not sure yet</option>
-                </select>
-              </div>
-
-              <div class="cf-group">
-                <label class="cf-label" for="cf-message">Message</label>
-                <textarea
-                  class="cf-input cf-textarea"
-                  id="cf-message"
-                  name="message"
-                  placeholder="Tell us about your project…"
-                  rows="4"
-                ></textarea>
-              </div>
-
-              <div class="cf-footer">
-                <p class="cf-note">
-                  By submitting you agree to our
-                  <a href="./pages/privacy-policy.html">Privacy Policy</a>. We respond
-                  within 1 business day.
-                </p>
-                <button type="submit" class="cf-btn" id="cf-submit">
-                  <span id="cf-btn-text">Send Message</span>
-                </button>
-              </div>
-
-              <div class="cf-success" id="cf-success" aria-live="polite">
-                Message sent — we'll be in touch shortly.
-              </div>
-              <div class="cf-error" id="cf-error" aria-live="polite">
-                Something went wrong. Please try WhatsApp or email directly.
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer role="contentinfo">
-      <div class="ft-top">
-        <div class="ft-brand-block">
-          <span class="ft-logo">AMBIENT<span>.</span>ELECTRON</span>
-          <p>
-            South African web design and development studio. Elegant,
-            high-performance digital presences for organisations that refuse to
-            blend in.
-          </p>
-        </div>
-        <div class="ft-col">
-          <h4>Studio</h4>
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#process">Our Process</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-          </ul>
-        </div>
-        <div class="ft-col">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="#contact">Contact Us</a></li>
-            <li>
-              <a href="mailto:ambientelectron.info@gmail.com"
-                >ambientelectron.info@gmail.com</a
-              >
-            </li>
-            <li>
-              <a href="https://wa.me/27749258393" target="_blank" rel="noopener"
-                >WhatsApp</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="ft-bottom">
-        <div class="ft-copy">
-          © 2026 AMBIENT ELECTRON (PTY) LTD. — ALL RIGHTS RESERVED — SOUTH
-          AFRICA
-        </div>
-        <div class="ft-reg">
-          Reg No: 2026/294485/07 &nbsp;·&nbsp; B-BBEE Level 1
-        </div>
-        <div class="ft-legal">
-          <a href="/./pages/privacy-policy.html">Privacy Policy</a>
-          <a href="/./pages/terms.html">Terms of Service</a>
-        </div>
-      </div>
-    </footer>
-
-    <!-- FLOATING WHATSAPP -->
-    <a
-      href="https://wa.me/27749258393"
-      class="wa-float"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat with us on WhatsApp"
-      >💬</a
-    >
-
-    <!-- BACK TO TOP -->
-    <button class="btt" id="btt" aria-label="Back to top" title="Back to top">
-      ↑
-    </button>
-
-    <script src="./js/script.js"></script>
-  </body>
+<script src="./js/script.js"></script>
+</body>
 </html>
