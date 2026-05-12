@@ -1255,11 +1255,13 @@ footer {
   align-items: center;
   gap: 6px;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 @media (max-width: 768px) {
   .swipe-hint { display: flex; }
 }
-.swipe-hint.hidden { opacity: 0; transition: opacity 0.4s; }
+.swipe-hint.visible { opacity: 1; transition: opacity 0.4s; }
 .swipe-arrow {
   width: 36px;
   height: 36px;
