@@ -85,7 +85,7 @@ function observeFadeIns() {
 observeFadeIns();
 
 /* ── ACTIVE NAV ON SCROLL ── */
-const navSections = ["process", "services", "pricing", "testimonials", "portfolio", "contact"];
+const navSections = ["process", "services", "pricing", "portfolio", "contact"];
 const navLinks = document.querySelectorAll("[data-nav]");
 const navEl = document.getElementById("nav");
 
@@ -251,5 +251,23 @@ if (ctForm) {
       btn.disabled = false;
       btnText.textContent = "Send Message";
     }
+  });
+}
+
+/* ── SWIPE HINT ── */
+const swipeHint = document.getElementById('swipe-hint');
+const pricingSection = document.getElementById('pricing');
+
+if (swipeHint && pricingSection) {
+  window.addEventListener('scroll', () => {
+    const rect = pricingSection.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight * 0.4 && rect.bottom > window.innerHeight * 0.5;
+    swipeHint.classList.toggle('hidden', !inView);
+  }, { passive: true });
+
+  document.querySelectorAll('.pt-wrap').forEach(wrap => {
+    wrap.addEventListener('scroll', () => {
+      swipeHint.classList.add('hidden');
+    }, { passive: true, once: true });
   });
 }

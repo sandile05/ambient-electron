@@ -26,7 +26,10 @@
 }
 
 html { scroll-behavior: smooth; }
-
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 body {
   background: var(--ink);
   color: var(--text);
@@ -318,16 +321,26 @@ canvas#cv {
   -webkit-text-stroke: 1px rgba(0, 207, 255, 0.22);
 }
 @media (max-width: 600px) {
-  .h-electron { font-weight: 700; letter-spacing: -0.01em; }
+  .h-electron {
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
   .h-el-top {
-    font-size: clamp(1.1rem, 8vw, 2rem);
-    -webkit-text-stroke: 0.5px rgba(0, 207, 255, 0.35);
+    font-size: clamp(1rem, 7vw, 1.8rem);
+    -webkit-text-stroke: 0.5px rgba(0, 207, 255, 0.3);
   }
   .h-el-bot {
-    font-size: clamp(2.2rem, 14vw, 4.5rem);
-    -webkit-text-stroke: 0.5px rgba(0, 207, 255, 0.28);
+    font-size: clamp(2rem, 12vw, 4rem);
+    -webkit-text-stroke: 0.5px rgba(0, 207, 255, 0.22);
   }
-  .h-electron .lit { text-shadow: 0 0 30px rgba(0, 207, 255, 0.12); }
+  .h-electron .lit {
+    color: transparent;
+    -webkit-text-stroke: 0.5px rgba(0, 207, 255, 0.3);
+    text-shadow: none;
+  }
+  .h-electron .lit2 {
+    -webkit-text-stroke: 0.5px rgba(0, 207, 255, 0.22);
+  }
 }
 
 .h-sub {
@@ -659,12 +672,12 @@ canvas#cv {
 
 .pt-label-col {
   font-family: "DM Mono", monospace;
-  font-size: 0.58rem;
-  letter-spacing: 2px;
+  font-size: 0.44rem;
+  letter-spacing: 1px;
   color: var(--soft);
   text-transform: uppercase;
   background: var(--deep) !important;
-  min-width: 180px;
+  min-width: 110px;
   position: sticky;
   left: 0;
   z-index: 1;
@@ -778,6 +791,22 @@ canvas#cv {
   text-transform: uppercase;
 }
 
+
+.pt-solo {
+  min-width: unset;
+  width: 100%;
+}
+.pt-solo th,
+.pt-solo td {
+  width: 50%;
+}
+.pt-solo th.pt-featured {
+  border-top: 2px solid var(--c);
+  background: rgba(0, 207, 255, 0.05);
+}
+.pt-solo td.pt-featured {
+  background: rgba(0, 207, 255, 0.03);
+}
 /* ── TESTIMONIALS ── */
 .tm-grid {
   display: grid;
@@ -1212,6 +1241,50 @@ footer {
 }
 @media (max-width: 768px) {
   .wa-float { bottom: 20px; right: 20px; width: 46px; height: 46px; }
+}
+
+/* ── SWIPE HINT ── */
+.swipe-hint {
+  display: none;
+  position: fixed;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 500;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .swipe-hint { display: flex; }
+}
+.swipe-hint.hidden { opacity: 0; transition: opacity 0.4s; }
+.swipe-arrow {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--dim);
+  border-radius: 50%;
+  background: rgba(0, 207, 255, 0.08);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c);
+  font-size: 1rem;
+  animation: swipe-pulse 1.8s ease infinite;
+}
+.swipe-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.48rem;
+  letter-spacing: 3px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+@keyframes swipe-pulse {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50% { transform: translateX(5px); opacity: 1; }
 }
 
 /* ── BACK TO TOP ── */
