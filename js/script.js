@@ -256,18 +256,18 @@ if (ctForm) {
 
 /* ── SWIPE HINT ── */
 const swipeHint = document.getElementById('swipe-hint');
-const pricingSection = document.getElementById('pricing');
+const buildTable = document.querySelector('.pt-wrap');
 
-if (swipeHint && pricingSection) {
- window.addEventListener('scroll', () => {
-  const rect = pricingSection.getBoundingClientRect();
-  const inView = rect.top < window.innerHeight * 0.4 && rect.bottom > window.innerHeight * 0.5;
-  swipeHint.classList.toggle('visible', inView);
-}, { passive: true });
+if (swipeHint && buildTable) {
+  window.addEventListener('scroll', () => {
+    const rect = buildTable.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight * 0.6 && rect.bottom > window.innerHeight * 0.5;
+    swipeHint.classList.toggle('visible', inView);
+  }, { passive: true });
 
-document.querySelectorAll('.pt-wrap').forEach(wrap => {
-  wrap.addEventListener('scroll', () => {
-    swipeHint.classList.remove('visible');
-  }, { passive: true, once: true });
-});
+  document.querySelectorAll('.pt-wrap').forEach(wrap => {
+    wrap.addEventListener('scroll', () => {
+      swipeHint.classList.remove('visible');
+    }, { passive: true, once: true });
+  });
 }
