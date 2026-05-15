@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="Ambient Electron">
+  <title>Ambient Electron</title>
+  <desc>Tilted ellipse orbital ring with glowing cyan source dot</desc>
+
+  <!-- glow halos -->
+  <circle cx="80" cy="80" r="52" fill="rgba(0,207,255,0.05)"/>
+  <circle cx="80" cy="80" r="36" fill="rgba(0,207,255,0.09)"/>
+  <circle cx="80" cy="80" r="22" fill="rgba(0,207,255,0.13)"/>
+
+  <!-- tilted orbital ellipse -->
+  <ellipse cx="80" cy="80" rx="68" ry="24"
+    fill="none" stroke="#00cfff" stroke-width="2.6"
+    transform="rotate(-35 80 80)"/>
+
+  <!-- source dot -->
+  <circle cx="80" cy="80" r="14" fill="#00cfff"/>
+
+  <!-- electron dot -->
+  <circle cx="37" cy="37" r="6.5" fill="#00cfff" opacity="0.78"/>
+</svg>

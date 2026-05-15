@@ -85,7 +85,6 @@ body {
 @media (max-width: 768px) {
   #cur { display: none; }
 }
-
 /* ── NAV ── */
 nav {
   position: fixed;
@@ -105,7 +104,12 @@ nav {
 }
 nav.scrolled { padding: 14px var(--pad); }
 
+/* ── LOGO — icon + text side by side ── */
 .nb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
   font-family: "Orbitron", sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
@@ -113,10 +117,18 @@ nav.scrolled { padding: 14px var(--pad); }
   letter-spacing: 3px;
   text-decoration: none;
   transition: opacity 0.4s;
-  flex-shrink: 0;
 }
 .nb:hover { opacity: 0.6; }
-.nb span { color: var(--c); }
+.nb span   { color: var(--c); }
+
+.nb-icon {
+  height: 36px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  transition: height 0.3s;
+}
+nav.scrolled .nb-icon { height: 28px; }
 
 .nl {
   display: flex;
@@ -168,15 +180,17 @@ nav.scrolled { padding: 14px var(--pad); }
 .hbg span:nth-child(2) { top: 15px; }
 .hbg span:nth-child(3) { top: 21px; }
 
-.hbg.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); background: var(--c); }
+.hbg.open span:nth-child(1) { transform: translateY(6px)  rotate(45deg);  background: var(--c); }
 .hbg.open span:nth-child(2) { opacity: 0; }
 .hbg.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); background: var(--c); }
 
 @media (max-width: 768px) {
-  .nl { display: none; }
-  .hbg { display: flex; }
+  nav          { padding: 18px 24px; }
+  .nl          { display: none; }
+  .hbg         { display: flex; }
+  .nb          { font-size: 0.68rem; letter-spacing: 2px; gap: 8px; }
+  .nb-icon     { height: 28px; }
 }
-
 /* ── DRAWER ── */
 .drawer {
   position: fixed;
