@@ -3,14 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ambient Electron — Web Design & Development Studio | South Africa</title>
 <meta name="description" content="Ambient Electron is a proudly black-owned South African web design and development studio. We build elegant, high-performance websites for organisations that refuse to blend in.">
 <meta name="keywords" content="web design South Africa, website development South Africa, web agency Johannesburg, school website design, black owned web studio, affordable website design SA">
 <meta name="author" content="Ambient Electron (Pty) Ltd">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.ambientelectron.co.za/">
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.ambientelectron.co.za/">
 <meta property="og:title" content="Ambient Electron — Web Design & Development | South Africa">
@@ -20,12 +18,10 @@
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Ambient Electron">
 <meta property="og:locale" content="en_ZA">
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ambient Electron — Web Design & Development | South Africa">
 <meta name="twitter:description" content="Proudly black-owned South African web studio. Elegant, high-performance websites for organisations that refuse to blend in.">
 <meta name="twitter:image" content="https://www.ambientelectron.co.za/og-image.jpg">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,23 +39,1590 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
-    "telephone": "+27749258393",
+    "telephone": "+27816802610",
     "email": "ambientelectron.info@gmail.com",
     "availableLanguage": "English"
   },
   "sameAs": []
 }
 </script>
-
-<link rel="icon" type="image/png" href="./assets/ambient-electron-icon.svg">
+<link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#020810">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@300;400;600;700&family=DM+Mono:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/styles.css">
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink:  #020810;
+  --deep: #050c1c;
+  --c:    #00cfff;
+  --c2:   rgba(0, 207, 255, 0.12);
+  --c3:   rgba(0, 207, 255, 0.06);
+  --dim:  rgba(0, 207, 255, 0.22);
+  --text: #a8bfda;
+  --soft: #3e5068;
+  --whi:  #e8f2ff;
+  --ln:   rgba(0, 207, 255, 0.09);
+  --gl:   rgba(255, 255, 255, 0.025);
+  --gb:   rgba(0, 207, 255, 0.07);
+  --pad:  72px;
+}
+@media (max-width: 768px) {
+  :root { --pad: 22px; }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: "Syne", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+@media (max-width: 768px) {
+  body { cursor: auto; }
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--dim); }
+
+/* ── SKIP LINK ── */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 16px;
+  z-index: 9999;
+  background: var(--c);
+  color: var(--ink);
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  padding: 10px 18px;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 8px; }
+
+/* ── CURSOR ── */
+#cur {
+  width: 8px;
+  height: 8px;
+  background: var(--c);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s, height 0.25s, background 0.25s;
+  mix-blend-mode: screen;
+}
+#cur.big {
+  width: 36px;
+  height: 36px;
+  background: var(--dim);
+}
+@media (max-width: 768px) {
+  #cur { display: none; }
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 300;
+  padding: 22px var(--pad);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(2, 8, 16, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--ln);
+  transition: padding 0.3s;
+}
+nav.scrolled { padding: 14px var(--pad); }
+
+.nb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--whi);
+  letter-spacing: 3px;
+  text-decoration: none;
+  transition: opacity 0.4s;
+  flex-shrink: 0;
+}
+.nb:hover { opacity: 0.6; }
+.nb span { color: var(--c); }
+.nb-logo {
+  height: 26px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  transition: height 0.3s;
+}
+nav.scrolled .nb-logo { height: 22px; }
+
+.nl {
+  display: flex;
+  gap: 44px;
+  list-style: none;
+}
+.nl a {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--soft);
+  text-decoration: none;
+  transition: color 0.4s, letter-spacing 0.4s;
+  white-space: nowrap;
+}
+.nl a:hover,
+.nl a.active {
+  color: var(--whi);
+  letter-spacing: 6px;
+}
+
+/* ── HAMBURGER → X ── */
+.hbg {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 400;
+  padding: 0;
+}
+.hbg span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--soft);
+  position: absolute;
+  left: 5px;
+  transition: transform 0.35s ease, opacity 0.25s ease, background 0.3s;
+  transform-origin: center;
+}
+.hbg span:nth-child(1) { top: 9px; }
+.hbg span:nth-child(2) { top: 15px; }
+.hbg span:nth-child(3) { top: 21px; }
+
+.hbg.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); background: var(--c); }
+.hbg.open span:nth-child(2) { opacity: 0; }
+.hbg.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); background: var(--c); }
+
+@media (max-width: 768px) {
+  .nl { display: none; }
+  .hbg { display: flex; }
+}
+
+/* ── DRAWER ── */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 350;
+  background: rgba(2, 8, 16, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.drawer.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.drawer-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(280px, 75vw);
+  height: 100%;
+  background: rgba(3, 8, 20, 0.98);
+  border-left: 1px solid var(--ln);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  padding: 80px 48px;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.drawer.open .drawer-inner { transform: translateX(0); }
+
+.drawer-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 1px solid var(--ln);
+  color: var(--c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.3s, border-color 0.3s;
+}
+.drawer-close:hover {
+  background: var(--c2);
+  border-color: var(--c);
+}
+
+.drawer a {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--soft);
+  text-decoration: none;
+  transform: translateX(20px);
+  opacity: 0;
+  transition: color 0.3s, transform 0.4s ease, opacity 0.4s ease;
+}
+.drawer.open a { transform: translateX(0); opacity: 1; }
+.drawer.open a:nth-child(2) { transition-delay: 0.08s; }
+.drawer.open a:nth-child(3) { transition-delay: 0.13s; }
+.drawer.open a:nth-child(4) { transition-delay: 0.18s; }
+.drawer.open a:nth-child(5) { transition-delay: 0.23s; }
+.drawer.open a:nth-child(6) { transition-delay: 0.28s; }
+.drawer a:hover { color: var(--c); }
+
+/* ── HERO ── */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+}
+canvas#cv {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.h-top {
+  position: relative;
+  z-index: 1;
+  padding: 130px var(--pad) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+/* logo placeholder */
+.h-logo-ph {
+  width: clamp(36px, 5vw, 52px);
+  height: clamp(36px, 5vw, 52px);
+  flex-shrink: 0;
+  opacity: 0;
+  animation: show 0.7s ease 0.3s forwards;
+}
+.h-logo-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1.5px solid var(--c);
+  position: relative;
+}
+.h-logo-ring::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 207, 255, 0.3);
+}
+.h-logo-ring::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 10px var(--c);
+}
+
+.h-tag {
+  font-size: clamp(0.75rem, 1.2vw, 0.88rem);
+  font-weight: 300;
+  color: var(--soft);
+  line-height: 1.9;
+  text-align: right;
+  opacity: 0;
+  animation: show 0.8s ease 0.8s forwards;
+}
+.h-bottom {
+  position: relative;
+  z-index: 1;
+  padding: 0 clamp(16px, 4vw, 60px) clamp(36px, 6vh, 60px);
+}
+
+/* stacked hero name */
+.h-electron {
+  display: flex;
+  flex-direction: column;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  animation: show 1s ease 0.6s forwards;
+}
+.h-el-top {
+  font-size: clamp(1.4rem, 5.5vw, 5.2rem);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 207, 255, 0.3);
+  display: block;
+}
+.h-el-bot {
+  font-size: clamp(2.6rem, 11vw, 11rem);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 207, 255, 0.22);
+  display: block;
+}
+.h-electron .lit {
+  color: var(--whi);
+  -webkit-text-stroke: 0px;
+  text-shadow: 0 0 60px rgba(0, 207, 255, 0.16);
+}
+.h-electron .lit2 {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 207, 255, 0.22);
+}
+@media (max-width: 600px) {
+  .h-electron { font-weight: 700; letter-spacing: -0.01em; }
+  .h-el-top {
+    font-size: clamp(1.1rem, 8vw, 2rem);
+    -webkit-text-stroke: 0.5px rgba(0, 207, 255, 0.35);
+  }
+  .h-el-bot {
+    font-size: clamp(2.2rem, 14vw, 4.5rem);
+    -webkit-text-stroke: 0.5px rgba(0, 207, 255, 0.28);
+  }
+  .h-electron .lit { text-shadow: 0 0 30px rgba(0, 207, 255, 0.12); }
+}
+
+.h-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 22px;
+  border-top: 1px solid var(--ln);
+  opacity: 0;
+  animation: show 0.7s ease 1.1s forwards;
+}
+.h-loc {
+  font-family: "DM Mono", monospace;
+  font-style: italic;
+  font-size: clamp(0.52rem, 0.9vw, 0.62rem);
+  color: var(--soft);
+  letter-spacing: 3px;
+}
+.h-cta {
+  font-family: "DM Mono", monospace;
+  font-size: clamp(0.52rem, 0.9vw, 0.62rem);
+  letter-spacing: 3px;
+  color: var(--c);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-bottom: 2px;
+  position: relative;
+  transition: opacity 0.3s;
+}
+.h-cta::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--c);
+  transform: scaleX(0.3);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.h-cta:hover { opacity: 0.7; }
+.h-cta:hover::after { transform: scaleX(1); }
+.h-ctas { display: flex; align-items: center; gap: 20px; }
+.h-cta-div {
+  display: block;
+  width: 1px;
+  height: 12px;
+  background: var(--soft);
+  opacity: 0.4;
+}
+
+/* ── SHARED ── */
+.sec { padding: 100px var(--pad); position: relative; }
+.sec-d { background: var(--deep); }
+.sep {
+  height: 1px;
+  margin: 0 var(--pad);
+  background: linear-gradient(90deg, transparent, var(--c), transparent);
+  opacity: 0.15;
+}
+.s-h {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: var(--whi);
+  letter-spacing: 2px;
+  margin-bottom: 52px;
+}
+
+/* ── ABOUT ── */
+.ab-wrap {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: clamp(24px, 6vw, 80px);
+  align-items: center;
+}
+.ab-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.56rem;
+  letter-spacing: 4px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.6;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.ab-text {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  color: var(--whi);
+  line-height: 1.85;
+}
+.ab-text em { font-style: normal; color: var(--c); opacity: 0.8; }
+@media (max-width: 600px) {
+  .ab-wrap { grid-template-columns: 1fr; gap: 16px; }
+  .ab-label { writing-mode: horizontal-tb; transform: none; }
+}
+
+/* ── STATS ── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--ln);
+}
+@media (max-width: 768px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 400px) { .stats { grid-template-columns: 1fr; } }
+
+.stat { background: var(--ink); padding: 36px 32px; transition: background 0.4s; }
+.stat:hover { background: var(--gl); }
+.stat-num {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 900;
+  color: var(--c);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-lbl { font-size: 0.82rem; color: var(--soft); line-height: 1.5; }
+
+/* ── PROCESS ── */
+.proc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--ln);
+}
+@media (max-width: 900px) { .proc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .proc-grid { grid-template-columns: 1fr; } }
+
+.proc-step {
+  background: var(--deep);
+  padding: clamp(28px, 4vw, 48px) clamp(22px, 3vw, 38px);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s;
+}
+.proc-step:hover { background: var(--gl); }
+.proc-step::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--dim), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.proc-step:hover::before { opacity: 1; }
+.proc-n {
+  font-family: "DM Mono", monospace;
+  font-size: 0.54rem;
+  letter-spacing: 4px;
+  color: var(--c);
+  opacity: 0.4;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.proc-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 700;
+  color: var(--whi);
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+.proc-body { font-size: 0.88rem; color: var(--text); line-height: 1.85; }
+
+/* ── SERVICES ── */
+.sv-list { list-style: none; }
+.sv-item { border-top: 1px solid var(--ln); overflow: hidden; }
+.sv-item:last-child { border-bottom: 1px solid var(--ln); }
+.sv-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(20px, 3vw, 36px) 0;
+  cursor: pointer;
+  transition: padding 0.4s;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (min-width: 769px) {
+  .sv-item:hover .sv-head { padding: clamp(20px, 3vw, 36px) 16px; }
+}
+.sv-name {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(0.88rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--soft);
+  letter-spacing: 1px;
+  transition: color 0.4s;
+  line-height: 1.2;
+  padding-right: 16px;
+}
+.sv-item:hover .sv-name,
+.sv-item.open .sv-name { color: var(--whi); }
+.sv-arrow {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 1px solid var(--ln);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--soft);
+  font-size: 0.7rem;
+  transition: border-color 0.4s, color 0.4s, transform 0.4s, background 0.4s;
+}
+.sv-item:hover .sv-arrow,
+.sv-item.open .sv-arrow {
+  border-color: var(--c);
+  color: var(--c);
+  transform: rotate(45deg);
+  background: var(--c2);
+}
+.sv-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.4s ease;
+}
+.sv-item:hover .sv-body,
+.sv-item.open .sv-body { max-height: 400px; padding-bottom: 32px; }
+.sv-body p { font-size: 0.92rem; color: var(--text); line-height: 1.9; max-width: 680px; }
+.sv-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chip {
+  font-family: "DM Mono", monospace;
+  font-size: 0.54rem;
+  letter-spacing: 2px;
+  padding: 5px 12px;
+  background: var(--c3);
+  border: 1px solid var(--ln);
+  color: var(--c);
+  text-transform: uppercase;
+}
+
+/* ── PRICING ── */
+.p-intro {
+  font-size: 0.9rem;
+  color: var(--soft);
+  margin-bottom: 52px;
+  max-width: 480px;
+  line-height: 1.85;
+}
+.pr-section-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 4px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 16px;
+}
+.pr-call {
+  margin-top: 48px;
+  padding: 36px 42px;
+  border: 1px solid var(--ln);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: var(--deep);
+}
+.pr-call-text { font-size: 1rem; color: var(--text); font-weight: 300; }
+.pr-call-btn {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  background: transparent;
+  border: 1px solid var(--c);
+  color: var(--c);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+.pr-call-btn:hover { background: var(--c2); }
+
+/* ── PRICING TABLE ── */
+.pt-wrap {
+  overflow-x: auto;
+  margin-bottom: 48px;
+  position: relative;
+}
+.pt-wrap::-webkit-scrollbar { height: 3px; }
+.pt-wrap::-webkit-scrollbar-thumb { background: var(--dim); }
+.pt-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, var(--deep));
+  pointer-events: none;
+}
+@media (min-width: 769px) {
+  .pt-wrap::after { display: none; }
+}
+
+.pt {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--ln);
+  min-width: 540px;
+}
+.pt th {
+  background: var(--deep);
+  padding: 28px 24px 20px;
+  text-align: left;
+  border: 1px solid var(--ln);
+  vertical-align: bottom;
+}
+.pt td {
+  background: var(--ink);
+  padding: 12px 24px;
+  border: 1px solid var(--ln);
+  font-size: 0.88rem;
+  color: var(--text);
+  vertical-align: middle;
+}
+.pt tr:hover td { background: var(--gl); }
+.pt tr.pt-row-price td { background: var(--deep); }
+.pt tr.pt-row-price:hover td { background: var(--deep); }
+
+.pt-label-col {
+  font-family: "DM Mono", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 2px;
+  color: var(--soft);
+  text-transform: uppercase;
+  background: var(--deep) !important;
+  min-width: 180px;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
+.pt-label-col:hover { background: var(--deep) !important; }
+
+.pt th.pt-featured {
+  background: rgba(0, 207, 255, 0.05);
+  border-top: 2px solid var(--c);
+}
+.pt td.pt-featured { background: rgba(0, 207, 255, 0.03); }
+.pt tr:hover td.pt-featured { background: rgba(0, 207, 255, 0.06); }
+.pt tr.pt-row-price td.pt-featured { background: rgba(0, 207, 255, 0.05); }
+
+.pt-tier {
+  font-family: "DM Mono", monospace;
+  font-size: 0.54rem;
+  letter-spacing: 4px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 8px;
+  display: block;
+}
+.pt-pages {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 900;
+  color: var(--whi);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.pt-pages sub {
+  font-size: 0.45em;
+  color: var(--soft);
+  font-weight: 400;
+  vertical-align: bottom;
+}
+.pt-monthly {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 900;
+  color: var(--whi);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pt-monthly sub {
+  font-size: 0.4em;
+  color: var(--soft);
+  font-weight: 400;
+  vertical-align: bottom;
+}
+.pt-price {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(0.78rem, 1.2vw, 0.9rem);
+  font-weight: 600;
+  color: var(--c);
+  letter-spacing: 1px;
+}
+.pt-feat-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.56rem;
+  letter-spacing: 3px;
+  color: var(--soft);
+  text-transform: uppercase;
+}
+.pt-check { color: var(--c); font-size: 1rem; }
+.pt-dash { color: var(--soft); opacity: 0.4; font-size: 0.9rem; }
+.pt-btn-cell { padding: 20px 24px; }
+.pt-btn {
+  display: block;
+  width: 100%;
+  padding: 11px 16px;
+  font-family: "DM Mono", monospace;
+  font-size: 0.54rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid var(--ln);
+  color: var(--soft);
+  background: transparent;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.pt-btn:hover { border-color: var(--c); color: var(--c); background: var(--c2); }
+.pt th.pt-featured .pt-btn,
+.pt td.pt-featured .pt-btn { border-color: var(--c); color: var(--c); }
+
+/* add-ons */
+.pt-addons { margin-top: 48px; }
+.pt-addons-title {
+  font-family: "DM Mono", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 4px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 16px;
+}
+.pt-addons-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.pt-addon-chip {
+  font-family: "DM Mono", monospace;
+  font-size: 0.54rem;
+  letter-spacing: 2px;
+  padding: 7px 14px;
+  background: var(--c3);
+  border: 1px solid var(--ln);
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+/* add-on pricing accordion */
+.ao-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "DM Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--c);
+  padding: 0;
+  transition: opacity 0.3s;
+}
+.ao-toggle:hover { opacity: 0.7; }
+.ao-toggle-arrow {
+  display: inline-block;
+  transition: transform 0.35s ease;
+  font-size: 0.7rem;
+}
+.ao-toggle.open .ao-toggle-arrow { transform: rotate(45deg); }
+
+.ao-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+.ao-panel.open { max-height: 1200px; }
+.ao-panel-inner { padding-top: 20px; }
+
+.ao-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ln);
+}
+.ao-summary-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.66rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.ao-summary-price {
+  font-family: "DM Mono", monospace;
+  font-size: 1.1rem;
+  color: var(--c);
+  white-space: nowrap;
+}
+.ao-note {
+  margin-top: 16px;
+  font-size: 0.78rem;
+  color: var(--soft);
+  line-height: 1.6;
+}
+
+/* ── TESTIMONIALS ── */
+.tm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--ln);
+}
+@media (max-width: 900px) { .tm-grid { grid-template-columns: 1fr; } }
+
+.tm-card {
+  background: var(--ink);
+  padding: clamp(28px, 4vw, 48px) clamp(22px, 3.5vw, 40px);
+  transition: background 0.4s;
+  position: relative;
+}
+.tm-card:hover { background: var(--gl); }
+.tm-quote {
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-weight: 300;
+  color: var(--whi);
+  line-height: 1.85;
+  margin-bottom: 28px;
+  font-style: italic;
+  opacity: 0.85;
+}
+.tm-quote::before {
+  content: "\201C";
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  color: var(--c);
+  opacity: 0.3;
+  display: block;
+  margin-bottom: 8px;
+}
+.tm-name {
+  font-family: "DM Mono", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 4px;
+}
+.tm-org { font-size: 0.82rem; color: var(--soft); }
+
+/* ── PORTFOLIO ── */
+.pf-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 14px;
+}
+@media (max-width: 768px) {
+  .pf-layout { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .pf-cell.tall { grid-row: auto; }
+  .pf-cell.tall .pf-vis { min-height: 200px !important; }
+}
+.pf-cell {
+  position: relative;
+  overflow: hidden;
+  background: var(--deep);
+  border: 1px solid var(--ln);
+  transition: border-color 0.4s;
+}
+.pf-cell:hover { border-color: var(--dim); }
+.pf-cell.tall { grid-row: 1/3; }
+.pf-vis {
+  height: clamp(160px, 20vw, 220px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.pf-cell.tall .pf-vis { height: 100%; min-height: clamp(300px, 38vw, 460px); }
+.pf-bg1 { background-image: url('https://res.cloudinary.com/durqfeb2i/image/upload/v1788489316/school_u3hkj4.png'); background-size: cover; background-position: top center; background-repeat: no-repeat; }
+.pf-bg2 { background-image: url('https://res.cloudinary.com/durqfeb2i/image/upload/v1788489346/lu_cgmiff.png'); background-size: cover; background-position: top center; background-repeat: no-repeat; }
+.pf-bg3 { background-image: url('https://res.cloudinary.com/durqfeb2i/image/upload/v1788489373/artist_gubdg0.png'); background-size: cover; background-position: top center; background-repeat: no-repeat; }
+.pf-ghost {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 207, 255, 0.06);
+  letter-spacing: 4px;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.pf-cell:hover .pf-ghost { opacity: 0.45; }
+.pf-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(16px, 2.5vw, 28px) clamp(16px, 2.5vw, 32px);
+  background: linear-gradient(to top, rgba(2, 8, 16, 0.97) 0%, rgba(2, 8, 16, 0.7) 50%, rgba(2, 8, 16, 0.45) 100%);
+  transition: background 0.4s;
+}
+.pf-cell:hover .pf-overlay {
+  background: linear-gradient(to top, rgba(2, 8, 16, 1) 0%, rgba(2, 8, 16, 0.92) 60%, rgba(2, 8, 16, 0.75) 100%);
+}
+.pf-kind {
+  font-family: "DM Mono", monospace;
+  font-size: 0.52rem;
+  letter-spacing: 3px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 5px;
+}
+.pf-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  font-weight: 600;
+  color: var(--whi);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+}
+.pf-desc {
+  font-size: 0.78rem;
+  color: var(--whi);
+  line-height: 1.7;
+  margin-top: 6px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s, transform 0.4s;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+}
+.pf-cell:hover .pf-desc { opacity: 1; transform: translateY(0); }
+.pf-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: "DM Mono", monospace;
+  font-size: 0.54rem;
+  letter-spacing: 3px;
+  color: var(--c);
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 207, 255, 0.3);
+  padding-bottom: 2px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s 0.05s, transform 0.4s 0.05s, border-color 0.3s;
+}
+.pf-cell:hover .pf-link { opacity: 1; transform: translateY(0); }
+.pf-link:hover { border-color: var(--c); }
+.pf-soon {
+  font-family: "DM Mono", monospace;
+  font-size: 0.54rem;
+  letter-spacing: 3px;
+  color: var(--soft);
+  text-transform: uppercase;
+  margin-top: 14px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s 0.05s, transform 0.4s 0.05s;
+}
+.pf-cell:hover .pf-soon { opacity: 1; transform: translateY(0); }
+
+/* ── CONTACT ── */
+.ct-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+.ct-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--ln);
+}
+@media (max-width: 900px) {
+  .ct-layout { grid-template-columns: 1fr; }
+}
+.ct-ch {
+  background: var(--ink);
+  padding: clamp(26px, 4vw, 48px) clamp(20px, 3.5vw, 42px);
+  text-decoration: none;
+  display: block;
+  transition: background 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+.ct-ch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--gb), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.ct-ch:hover { background: var(--gl); }
+.ct-ch:hover::after { opacity: 1; }
+.ct-ico {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--ln);
+  color: var(--whi);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  font-size: 0.95rem;
+  transition: border-color 0.4s;
+}
+.ct-ch:hover .ct-ico { border-color: var(--c); }
+.ct-lbl {
+  font-family: "DM Mono", monospace;
+  font-size: 0.52rem;
+  letter-spacing: 4px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 7px;
+}
+.ct-val {
+  font-size: clamp(0.88rem, 1.5vw, 1rem);
+  font-weight: 500;
+  color: var(--whi);
+  transition: color 0.3s;
+}
+.ct-ch:hover .ct-val { color: var(--c); }
+
+/* ── FORM ── */
+.ct-form-wrap {
+  background: var(--deep);
+  border: 1px solid var(--ln);
+  padding: clamp(28px, 4vw, 48px);
+}
+.cf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 600px) { .cf-row { grid-template-columns: 1fr; } }
+.cf-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.cf-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.54rem;
+  letter-spacing: 3px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+.cf-input {
+  background: var(--ink);
+  border: 1px solid var(--ln);
+  color: var(--whi);
+  font-family: "Syne", sans-serif;
+  font-size: 0.9rem;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.3s;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  width: 100%;
+}
+.cf-input::placeholder { color: var(--soft); }
+.cf-input:focus { border-color: var(--c); }
+.cf-input.invalid { border-color: rgba(255, 80, 80, 0.6); }
+.cf-field-error {
+  font-family: "DM Mono", monospace;
+  font-size: 0.54rem;
+  letter-spacing: 2px;
+  color: rgba(255, 100, 100, 0.8);
+  margin-top: 4px;
+}
+.cf-select { cursor: pointer; color: var(--whi); }
+.cf-select option { background: var(--deep); color: var(--whi); }
+.cf-textarea { resize: vertical; min-height: 110px; }
+.cf-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+.cf-note { font-size: 0.78rem; color: var(--soft); line-height: 1.6; max-width: 300px; }
+.cf-note a { color: var(--c); text-decoration: none; border-bottom: 1px solid rgba(0, 207, 255, 0.3); }
+.cf-btn {
+  font-family: "DM Mono", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  background: transparent;
+  border: 1px solid var(--c);
+  color: var(--c);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+.cf-btn:hover { background: var(--c2); }
+.cf-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.cf-success {
+  display: none;
+  margin-top: 16px;
+  padding: 14px 18px;
+  border: 1px solid rgba(0, 207, 255, 0.3);
+  background: rgba(0, 207, 255, 0.06);
+  font-family: "DM Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: var(--c);
+}
+.cf-error {
+  display: none;
+  margin-top: 16px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 80, 80, 0.3);
+  background: rgba(255, 80, 80, 0.06);
+  font-family: "DM Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: rgba(255, 100, 100, 0.8);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--deep);
+  padding: clamp(32px, 5vw, 56px) var(--pad) clamp(24px, 4vw, 40px);
+  border-top: 1px solid var(--ln);
+}
+.ft-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--ln);
+}
+@media (max-width: 768px) { .ft-top { grid-template-columns: 1fr; gap: 32px; } }
+
+.ft-brand-block .ft-logo {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--whi);
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+  display: block;
+}
+.ft-brand-block .ft-logo span { color: var(--c); }
+.ft-brand-block p { font-size: 0.85rem; color: var(--soft); line-height: 1.8; max-width: 260px; }
+.ft-col h4 {
+  font-family: "DM Mono", monospace;
+  font-size: 0.56rem;
+  letter-spacing: 4px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 18px;
+}
+.ft-col ul { list-style: none; }
+.ft-col ul li { margin-bottom: 12px; }
+.ft-col ul li a { font-size: 0.88rem; color: var(--soft); text-decoration: none; transition: color 0.3s; }
+.ft-col ul li a:hover { color: var(--whi); }
+.ft-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.ft-copy {
+  font-family: "DM Mono", monospace;
+  font-size: 0.52rem;
+  letter-spacing: 2px;
+  color: var(--soft);
+  opacity: 0.7;
+}
+.ft-reg {
+  font-family: "DM Mono", monospace;
+  font-size: 0.52rem;
+  letter-spacing: 2px;
+  color: var(--soft);
+  opacity: 0.7;
+}
+.ft-legal { display: flex; gap: 24px; }
+.ft-legal a {
+  font-family: "DM Mono", monospace;
+  font-size: 0.52rem;
+  letter-spacing: 2px;
+  color: var(--soft);
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.ft-legal a:hover { opacity: 1; }
+
+/* ── FLOATING WHATSAPP ── */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 250;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(0, 207, 255, 0.12);
+  border: 1px solid var(--dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.3rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity 0.4s ease, background 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 0 0 rgba(0, 207, 255, 0);
+  animation: wa-pulse 3s ease infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+.wa-float.show { opacity: 1; pointer-events: all; }
+.wa-float:hover { background: var(--dim); transform: scale(1.08); animation: none; }
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 207, 255, 0.2); }
+  50% { box-shadow: 0 0 0 10px rgba(0, 207, 255, 0); }
+}
+@media (max-width: 768px) {
+  .wa-float { bottom: 20px; right: 20px; width: 46px; height: 46px; }
+}
+
+/* ── BACK TO TOP ── */
+.btt {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 250;
+  width: 42px;
+  height: 42px;
+  background: rgba(2, 8, 16, 0.7);
+  border: 1px solid var(--ln);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--soft);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+.btt.show { opacity: 1; transform: none; pointer-events: all; }
+.btt:hover { border-color: var(--c); color: var(--c); }
+@media (max-width: 768px) { .btt { left: 20px; bottom: 20px; } }
+
+/* ── ANIMATIONS ── */
+@keyframes show { to { opacity: 1; } }
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.fade-in.vis { opacity: 1; transform: none; }
+
+/* ── SWIPE HINT ── */
+.swipe-hint {
+  display: none;
+  position: fixed;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 500;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+@media (max-width: 768px) {
+  .swipe-hint { display: flex; }
+}
+.swipe-hint.visible { opacity: 1; }
+.swipe-arrow {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--dim);
+  border-radius: 50%;
+  background: rgba(0, 207, 255, 0.08);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c);
+  font-size: 1rem;
+  animation: swipe-pulse 1.8s ease infinite;
+}
+.swipe-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.48rem;
+  letter-spacing: 3px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+@keyframes swipe-pulse {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50% { transform: translateX(5px); opacity: 1; }
+}
+
+/* ── SOLO CARE TABLE ── */
+.pt-solo-wrap { margin-bottom: 48px; }
+.pt-solo { min-width: unset; width: 100%; }
+.pt-solo .pt-label-col { width: 60%; }
+
+@media (max-width: 768px) {
+  .pt-label-col {
+    font-size: 0.42rem;
+    letter-spacing: 0.5px;
+    min-width: 90px;
+    max-width: 90px;
+    width: 90px;
+  }
+}
+
+/* ── MOBILE PRICING ACCORDION ── */
+.pr-mobile { display: none; margin-bottom: 48px; }
+@media (max-width: 768px) {
+  .pr-mobile { display: block; }
+  .pt-wrap { display: none; }
+}
+.pr-acc-item {
+  border: 1px solid var(--ln);
+  margin-bottom: 1px;
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+}
+.pr-acc-item.featured {
+  border-top: 2px solid var(--c);
+  background: rgba(0,207,255,0.03);
+}
+.pr-acc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 22px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.3s;
+}
+.pr-acc-head:hover { background: var(--gl); }
+.pr-acc-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.48rem;
+  letter-spacing: 3px;
+  color: var(--c);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+}
+.pr-acc-tier {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 4px;
+  color: var(--c);
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+.pr-acc-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1rem, 5vw, 1.4rem);
+  font-weight: 900;
+  color: var(--whi);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pr-acc-name sub {
+  font-size: 0.4em;
+  color: var(--soft);
+  font-weight: 400;
+  vertical-align: bottom;
+}
+.pr-acc-price {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--c);
+  letter-spacing: 1px;
+}
+.pr-acc-arrow {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: 1px solid var(--ln);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--soft);
+  font-size: 0.7rem;
+  transition: border-color 0.3s, color 0.3s, transform 0.35s, background 0.3s;
+}
+.pr-acc-item.open .pr-acc-arrow {
+  border-color: var(--c);
+  color: var(--c);
+  transform: rotate(45deg);
+  background: var(--c2);
+}
+.pr-acc-item {
+  scroll-margin-top: 90px;
+}
+.pr-acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+.pr-acc-item.open .pr-acc-body { max-height: 1100px; }
+.pr-acc-inner { padding: 0 22px 22px; }
+.pr-acc-scope {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--ln);
+}
+.pr-acc-feats { list-style: none; margin-bottom: 20px; }
+.pr-acc-feats li {
+  font-size: 0.84rem;
+  color: var(--text);
+  padding: 9px 0;
+  border-bottom: 1px solid var(--ln);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pr-acc-feats li::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+.pr-acc-feats li.off { color: var(--soft); }
+.pr-acc-feats li.off::before { background: var(--soft); opacity: 0.3; }
+.pr-acc-btn {
+  display: block;
+  width: 100%;
+  padding: 13px 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid var(--c);
+  color: var(--c);
+  background: transparent;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+.pr-acc-btn:hover { background: var(--c2); }
+
+/* ── SOLO CARE TABLE ── */
+.pt-solo-wrap { margin-bottom: 48px; }
+.pt-solo { min-width: unset; width: 100%; }
+.pt-solo .pt-label-col { width: 60%; }
+
+@media (max-width: 768px) {
+  .pt-label-col {
+    font-size: 0.42rem;
+    letter-spacing: 0.5px;
+    min-width: 90px;
+    max-width: 90px;
+    width: 90px;
+  }
+}
+
+</style>
 </head>
 <body>
+
 
 <a href="#main" class="skip-link">Skip to content</a>
 <div id="cur"></div>
@@ -76,9 +1639,10 @@
   </div>
 </div>
 
+<!-- NAV -->
 <nav id="nav" role="navigation" aria-label="Main navigation">
   <a href="#hero" class="nb" aria-label="Ambient Electron home">
-    <img src="/assets/ambient-electron-icon.svg" alt="" aria-hidden="true" class="nb-icon" />
+    <img src="https://res.cloudinary.com/durqfeb2i/image/upload/v1788460156/ambient-electron-logo_xs79rq.png" alt="Ambient Electron logo" class="nb-logo">
     AMBIENT<span>.</span>ELECTRON
   </a>
   <ul class="nl">
@@ -147,7 +1711,7 @@
   </div>
   <div class="stat fade-in" role="listitem">
     <div class="stat-num">∞</div>
-    <div class="stat-lbl">We don't disappear after launch</div>
+    <div class="stat-lbl">Ongoing support available</div>
   </div>
 </div>
 
@@ -158,9 +1722,9 @@
   <h2 class="s-h fade-in" id="process-heading">How We Work</h2>
   <div class="proc-grid">
     <div class="proc-step fade-in">
-      <div class="proc-n">01 — See It</div>
-      <h3 class="proc-title">Experience It First</h3>
-      <p class="proc-body">You see a fully built, live example before committing to anything. No mood boards, no guesswork — you know exactly what you're getting from day one.</p>
+      <div class="proc-n">01 — Discover It</div>
+      <h3 class="proc-title">Understand the Brief</h3>
+      <p class="proc-body">We start by understanding your organisation — your goals, audience, and identity — so every decision that follows is grounded in what you actually need. No mood boards, no guesswork.</p>
     </div>
     <div class="proc-step fade-in">
       <div class="proc-n">02 — Personalise It</div>
@@ -192,7 +1756,7 @@
         <div class="sv-arrow" aria-hidden="true">↗</div>
       </div>
       <div class="sv-body">
-        <p>Proven, high-performance websites adapted to your organisation's identity. You see a live example first — then we tailor the colours, content, structure, and branding to make it completely yours. Fast, responsive, and built to last.</p>
+        <p>Proven, high-performance websites adapted to your organisation's identity. We tailor the colours, content, structure, and branding to make it completely yours — fast, responsive, and built to last.</p>
         <div class="sv-chips" aria-label="Technologies and features">
           <span class="chip">Custom Design</span>
           <span class="chip">Responsive</span>
@@ -225,32 +1789,170 @@
 <!-- PRICING -->
 <section class="sec sec-d" id="pricing" aria-labelledby="pricing-heading">
   <h2 class="s-h fade-in" id="pricing-heading">Transparent Pricing</h2>
-  <p class="p-intro fade-in">Pricing starts from R3,500. Every project is scoped to your specific needs — book a call and we'll give you a clear number within 24 hours.</p>
+  <p class="p-intro fade-in">Pricing starts from R2,500 and is based on what your site actually needs — not just page count. Every project is scoped to your specific needs — book a call and we'll give you a clear number within 1 business day.</p>
 
   <p class="pr-section-label fade-in">Build</p>
-  <div class="pt-wrap fade-in">
+  
+  <!-- MOBILE ACCORDION PRICING -->
+  <div class="pr-mobile">
+    <div class="pr-acc-item fade-in">
+      <div class="pr-acc-head">
+        <div class="pr-acc-left">
+          <div class="pr-acc-tier">Signal</div>
+          <div class="pr-acc-name">Simple &amp; <sub>Static</sub></div>
+          <div class="pr-acc-price">From R2,500</div>
+        </div>
+        <div class="pr-acc-arrow">&#x2197;</div>
+      </div>
+      <div class="pr-acc-body">
+        <div class="pr-acc-inner">
+          <p class="pr-acc-scope">A clean, static presence — info, contact, photo gallery, and a WhatsApp button. Typically 1&ndash;5 pages.</p>
+          <ul class="pr-acc-feats">
+            <li>Mobile responsive</li>
+            <li>Contact / WhatsApp integration</li>
+            <li>Photo gallery</li>
+            <li>Basic SEO setup</li>
+            <li>Domain &amp; hosting setup</li>
+            <li class="off">CMS</li>
+            <li class="off">Advanced SEO</li>
+            <li class="off">Smooth animations</li>
+            <li class="off">Full SEO strategy</li>
+            <li class="off">Custom interactions</li>
+            <li class="off">Integrations &amp; automation</li>
+            <li class="off">Analytics setup</li>
+            <li class="off">Priority support</li>
+            <li>2 revision rounds</li>
+            <li>3 months domain &amp; maintenance included</li>
+          </ul>
+          <a href="#contact" class="pr-acc-btn" onclick="setPackage('Signal')">Book a Call</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-acc-item featured fade-in">
+      <div class="pr-acc-head">
+        <div class="pr-acc-left">
+          <div class="pr-acc-tier">Pulse — Most Popular</div>
+          <div class="pr-acc-name">Interactive &amp; <sub>Custom</sub></div>
+          <div class="pr-acc-price">From R5,000</div>
+        </div>
+        <div class="pr-acc-arrow">&#x2197;</div>
+      </div>
+      <div class="pr-acc-body">
+        <div class="pr-acc-inner">
+          <p class="pr-acc-scope">Custom design and functionality — CMS, booking, interactive galleries, integrations. Scoped to features, not page count.</p>
+          <ul class="pr-acc-feats">
+            <li>Mobile responsive</li>
+            <li>Contact / WhatsApp integration</li>
+            <li>Interactive photo gallery</li>
+            <li>Basic SEO setup</li>
+            <li>Domain &amp; hosting setup</li>
+            <li>CMS</li>
+            <li>Advanced SEO</li>
+            <li>Smooth animations</li>
+            <li class="off">Full SEO strategy</li>
+            <li class="off">Custom interactions</li>
+            <li class="off">Integrations &amp; automation</li>
+            <li class="off">Analytics setup</li>
+            <li class="off">Priority support</li>
+            <li>3 revision rounds</li>
+            <li>6 months domain &amp; maintenance included</li>
+          </ul>
+          <a href="#contact" class="pr-acc-btn" onclick="setPackage('Pulse')">Book a Call</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-acc-item fade-in">
+      <div class="pr-acc-head">
+        <div class="pr-acc-left">
+          <div class="pr-acc-tier">Current</div>
+          <div class="pr-acc-name">Advanced &amp; <sub>Integrated</sub></div>
+          <div class="pr-acc-price">From R9,000</div>
+        </div>
+        <div class="pr-acc-arrow">&#x2197;</div>
+      </div>
+      <div class="pr-acc-body">
+        <div class="pr-acc-inner">
+          <p class="pr-acc-scope">Complex builds — integrations, full SEO strategy, custom animations and analytics.</p>
+          <ul class="pr-acc-feats">
+            <li>Mobile responsive</li>
+            <li>Contact / WhatsApp integration</li>
+            <li>Advanced gallery with filtering</li>
+            <li>Basic SEO setup</li>
+            <li>Domain &amp; hosting setup</li>
+            <li>CMS</li>
+            <li>Advanced SEO</li>
+            <li>Smooth animations</li>
+            <li>Full SEO strategy</li>
+            <li>Custom interactions &amp; layouts</li>
+            <li>Integrations &amp; automation</li>
+            <li>Analytics setup</li>
+            <li>Priority support</li>
+            <li>5 revision rounds</li>
+            <li>12 months domain &amp; maintenance included</li>
+          </ul>
+          <a href="#contact" class="pr-acc-btn" onclick="setPackage('Current')">Book a Call</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-acc-item fade-in">
+      <div class="pr-acc-head">
+        <div class="pr-acc-left">
+          <div class="pr-acc-tier">Care</div>
+          <div class="pr-acc-name">Hosting &amp; <sub>Maintenance</sub></div>
+          <div class="pr-acc-price">R399 <sub>/month</sub></div>
+        </div>
+        <div class="pr-acc-arrow">&#x2197;</div>
+      </div>
+      <div class="pr-acc-body">
+        <div class="pr-acc-inner">
+          <p class="pr-acc-scope">Ongoing hosting, monitoring, and upkeep for a site we've already built — includes 2 content changes per month.</p>
+          <ul class="pr-acc-feats">
+            <li>Managed hosting</li>
+            <li>Domain support</li>
+            <li>Uptime monitoring</li>
+            <li>Security checks</li>
+            <li>Performance monitoring</li>
+            <li>Backups</li>
+            <li>2 content changes per month</li>
+          </ul>
+          <a href="#contact" class="pr-acc-btn" onclick="setPackage('Care')">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="pt-wrap fade-in">
     <table class="pt" role="table" aria-label="Build pricing">
       <thead>
         <tr>
           <th class="pt-label-col"></th>
           <th>
             <span class="pt-tier">Signal</span>
-            <div class="pt-pages">1–3 <sub>pages</sub></div>
-            <div class="pt-price">From R3,500</div>
+            <div class="pt-pages">Simple &amp; Static</div>
+            <div class="pt-price">From R2,500</div>
           </th>
           <th class="pt-featured">
             <span class="pt-tier">Pulse — Most Popular</span>
-            <div class="pt-pages">4–8 <sub>pages</sub></div>
-            <div class="pt-price">From R8,500</div>
+            <div class="pt-pages">Interactive &amp; Custom</div>
+            <div class="pt-price">From R5,000</div>
           </th>
           <th>
             <span class="pt-tier">Current</span>
-            <div class="pt-pages">9+ <sub>pages</sub></div>
-            <div class="pt-price">From R12,000</div>
+            <div class="pt-pages">Advanced &amp; Integrated</div>
+            <div class="pt-price">From R9,000</div>
           </th>
         </tr>
       </thead>
       <tbody>
+        <tr class="pt-row-scope">
+          <td class="pt-label-col pt-feat-label">Typical scope</td>
+          <td>Info, contact, gallery &amp; WhatsApp button</td>
+          <td class="pt-featured">CMS, booking, galleries, integrations</td>
+          <td>Automation, integrations, full SEO strategy</td>
+        </tr>
         <tr>
           <td class="pt-label-col pt-feat-label">Mobile responsive</td>
           <td><span class="pt-check">✓</span></td>
@@ -262,6 +1964,12 @@
           <td><span class="pt-check">✓</span></td>
           <td class="pt-featured"><span class="pt-check">✓</span></td>
           <td><span class="pt-check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="pt-label-col pt-feat-label">Photo gallery</td>
+          <td>Basic</td>
+          <td class="pt-featured">Interactive</td>
+          <td>Advanced + filtering</td>
         </tr>
         <tr>
           <td class="pt-label-col pt-feat-label">Basic SEO setup</td>
@@ -289,7 +1997,7 @@
         </tr>
         <tr>
           <td class="pt-label-col pt-feat-label">Smooth animations</td>
-          <td><span class="pt-check">✓</span></td>
+          <td><span class="pt-dash">—</span></td>
           <td class="pt-featured"><span class="pt-check">✓</span></td>
           <td><span class="pt-check">✓</span></td>
         </tr>
@@ -302,7 +2010,7 @@
         <tr>
           <td class="pt-label-col pt-feat-label">Custom interactions & layouts</td>
           <td><span class="pt-dash">—</span></td>
-          <td class="pt-featured"><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-dash">—</span></td>
           <td><span class="pt-check">✓</span></td>
         </tr>
         <tr>
@@ -320,7 +2028,7 @@
         <tr>
           <td class="pt-label-col pt-feat-label">Priority support</td>
           <td><span class="pt-dash">—</span></td>
-          <td class="pt-featured"><span class="pt-check">✓</span></td>
+          <td class="pt-featured"><span class="pt-dash">—</span></td>
           <td><span class="pt-check">✓</span></td>
         </tr>
         <tr>
@@ -330,7 +2038,7 @@
           <td>5 rounds</td>
         </tr>
         <tr>
-          <td class="pt-label-col pt-feat-label">Hosting included</td>
+          <td class="pt-label-col pt-feat-label">Domain &amp; maintenance included</td>
           <td>3 months</td>
           <td class="pt-featured">6 months</td>
           <td>12 months</td>
@@ -345,147 +2053,60 @@
     </table>
   </div>
 
-  <!-- <p class="pr-section-label fade-in" style="margin-top:48px">Ongoing</p>
+  <p class="pr-section-label fade-in" style="margin-top:48px">Ongoing</p>
   <div class="pt-wrap fade-in">
     <table class="pt" role="table" aria-label="Ongoing pricing">
       <thead>
         <tr>
           <th class="pt-label-col"></th>
-          <th>
-            <span class="pt-tier">Care</span>
-            <div class="pt-monthly">R400 <sub>/month</sub></div>
-            <div class="pt-price" style="margin-top:6px">Hosting & maintenance</div>
-          </th>
           <th class="pt-featured">
-            <span class="pt-tier">Care+</span>
-            <div class="pt-monthly">R800 <sub>/month</sub></div>
-            <div class="pt-price" style="margin-top:6px">Priority & growth</div>
+            <span class="pt-tier">Care</span>
+            <div class="pt-monthly">R399 <sub>/month</sub></div>
+            <div class="pt-price" style="margin-top:6px">Hosting &amp; maintenance</div>
           </th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td class="pt-label-col pt-feat-label">Managed hosting</td>
-          <td><span class="pt-check">✓</span></td>
           <td class="pt-featured"><span class="pt-check">✓</span></td>
         </tr>
         <tr>
           <td class="pt-label-col pt-feat-label">Domain support</td>
-          <td><span class="pt-check">✓</span></td>
           <td class="pt-featured"><span class="pt-check">✓</span></td>
         </tr>
         <tr>
           <td class="pt-label-col pt-feat-label">Uptime monitoring</td>
-          <td><span class="pt-check">✓</span></td>
           <td class="pt-featured"><span class="pt-check">✓</span></td>
         </tr>
         <tr>
           <td class="pt-label-col pt-feat-label">Security checks</td>
-          <td><span class="pt-check">✓</span></td>
           <td class="pt-featured"><span class="pt-check">✓</span></td>
         </tr>
         <tr>
           <td class="pt-label-col pt-feat-label">Performance monitoring</td>
-          <td><span class="pt-check">✓</span></td>
           <td class="pt-featured"><span class="pt-check">✓</span></td>
         </tr>
         <tr>
           <td class="pt-label-col pt-feat-label">Backups</td>
-          <td><span class="pt-check">✓</span></td>
           <td class="pt-featured"><span class="pt-check">✓</span></td>
         </tr>
         <tr>
-          <td class="pt-label-col pt-feat-label">Minor content updates</td>
-          <td><span class="pt-dash">—</span></td>
-          <td class="pt-featured"><span class="pt-check">✓</span></td>
-        </tr>
-        <tr>
-          <td class="pt-label-col pt-feat-label">Technical support</td>
-          <td><span class="pt-dash">—</span></td>
-          <td class="pt-featured"><span class="pt-check">✓</span></td>
-        </tr>
-        <tr>
-          <td class="pt-label-col pt-feat-label">Priority response</td>
-          <td><span class="pt-dash">—</span></td>
-          <td class="pt-featured"><span class="pt-check">✓</span></td>
-        </tr>
-        <tr>
-          <td class="pt-label-col pt-feat-label">Monthly analytics report</td>
-          <td><span class="pt-dash">—</span></td>
-          <td class="pt-featured"><span class="pt-check">✓</span></td>
-        </tr>
-        <tr>
-          <td class="pt-label-col pt-feat-label">SEO monitoring</td>
-          <td><span class="pt-dash">—</span></td>
-          <td class="pt-featured"><span class="pt-check">✓</span></td>
-        </tr>
-        <tr>
-          <td class="pt-label-col pt-feat-label">Ongoing optimisation</td>
-          <td><span class="pt-dash">—</span></td>
-          <td class="pt-featured"><span class="pt-check">✓</span></td>
+          <td class="pt-label-col pt-feat-label">Content changes</td>
+          <td class="pt-featured">2 per month</td>
         </tr>
         <tr class="pt-row-price">
           <td class="pt-label-col"></td>
-          <td class="pt-btn-cell"><a href="#contact" class="pt-btn" onclick="setPackage('Care')">Book a Call</a></td>
-          <td class="pt-featured pt-btn-cell"><a href="#contact" class="pt-btn" onclick="setPackage('Care+')">Book a Call</a></td>
+          <td class="pt-featured pt-btn-cell"><a href="#contact" class="pt-btn" onclick="setPackage('Care')">Book a Call</a></td>
         </tr>
       </tbody>
     </table>
-  </div> -->
-
-  <p class="pr-section-label fade-in" style="margin-top:48px">Ongoing</p>
-<div class=" fade-in">
-  <table class="pt pt-solo" role="table" aria-label="Ongoing pricing">
-    <thead>
-      <tr>
-        <th class="pt-label-col"></th>
-        <th class="pt-featured">
-          <span class="pt-tier">Care</span>
-          <div class="pt-monthly">R450 <sub>/month</sub></div>
-          <div class="pt-price" style="margin-top:6px">Hosting & maintenance</div>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="pt-label-col pt-feat-label">Managed hosting</td>
-        <td class="pt-featured"><span class="pt-check">✓</span></td>
-      </tr>
-      <tr>
-        <td class="pt-label-col pt-feat-label">Domain support</td>
-        <td class="pt-featured"><span class="pt-check">✓</span></td>
-      </tr>
-      <tr>
-        <td class="pt-label-col pt-feat-label">Uptime monitoring</td>
-        <td class="pt-featured"><span class="pt-check">✓</span></td>
-      </tr>
-      <tr>
-        <td class="pt-label-col pt-feat-label">Security checks</td>
-        <td class="pt-featured"><span class="pt-check">✓</span></td>
-      </tr>
-      <tr>
-        <td class="pt-label-col pt-feat-label">Performance monitoring</td>
-        <td class="pt-featured"><span class="pt-check">✓</span></td>
-      </tr>
-      <tr>
-        <td class="pt-label-col pt-feat-label">Backups</td>
-        <td class="pt-featured"><span class="pt-check">✓</span></td>
-      </tr>
-      <tr class="pt-row-price">
-        <td class="pt-label-col"></td>
-        <td class="pt-featured pt-btn-cell">
-          <a href="#contact" class="pt-btn" onclick="setPackage('Care')">Book a Call</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  </div>
 
   <div class="pt-addons fade-in">
     <p class="pt-addons-title">Optional Add-Ons</p>
     <div class="pt-addons-chips">
       <span class="pt-addon-chip">Additional pages</span>
-      <span class="pt-addon-chip">E-commerce</span>
       <span class="pt-addon-chip">Booking systems</span>
       <span class="pt-addon-chip">Blog setup</span>
       <span class="pt-addon-chip">Email integrations</span>
@@ -494,6 +2115,21 @@
       <span class="pt-addon-chip">Custom animations</span>
       <span class="pt-addon-chip">SEO campaigns</span>
       <span class="pt-addon-chip">Additional revisions</span>
+    </div>
+
+    <button class="ao-toggle" id="ao-toggle" aria-expanded="false" aria-controls="ao-panel">
+      <span class="ao-toggle-arrow">+</span>
+      <span class="ao-toggle-label">See Add-On Pricing</span>
+    </button>
+    <div class="ao-panel" id="ao-panel">
+      <div class="ao-panel-inner">
+        <div class="ao-summary">
+          <span class="ao-summary-label">Typical Add-On Range</span>
+          <span class="ao-summary-price">R400 – R3,000</span>
+        </div>
+        <p class="ao-note">Most add-ons — extra pages, galleries, blog setup, booking integrations, animations, additional revisions — fall in this range depending on complexity. Exact pricing is confirmed on your call before any work begins.</p>
+        <p class="ao-note">Basic SEO setup is already included in every package, and Advanced/Full SEO strategy is included from Pulse upward. An <strong>SEO campaign</strong> is different — it's ongoing monthly work (keyword research, content, backlinks, rank tracking) with no fixed endpoint, so it's scoped and retained separately. Branding assistance is scoped individually too, since logo and identity work varies widely in scope.</p>
+      </div>
     </div>
   </div>
 
@@ -505,62 +2141,32 @@
 
 <div class="sep" aria-hidden="true"></div>
 
-<!-- TESTIMONIALS -->
-<!-- <section class="sec" id="testimonials" aria-labelledby="tm-heading">
-  <h2 class="s-h fade-in" id="tm-heading">What Clients Say</h2>
-  <div class="tm-grid">
-    <div class="tm-card fade-in">
-      <p class="tm-quote">The team at Ambient Electron delivered far beyond what we expected. Our new website has transformed how parents and prospective families perceive our school.</p>
-      <div class="tm-name">Principal M. Dlamini</div>
-      <div class="tm-org">Excellence High School</div>
-    </div>
-    <div class="tm-card fade-in">
-      <p class="tm-quote">Elegant, fast, and exactly on-brand. The process was seamless from discovery to launch. We felt heard every step of the way.</p>
-      <div class="tm-name">Admin Director</div>
-      <div class="tm-org">Sunrise Primary School</div>
-    </div>
-    <div class="tm-card fade-in">
-      <p class="tm-quote">We needed a site that could handle multiple campuses and complex content. Ambient Electron built exactly that — and made it look effortless.</p>
-      <div class="tm-name">Communications Lead</div>
-      <div class="tm-org">Greenfield Academy</div>
-    </div>
-  </div>
-</section> -->
-
-<div class="sep" aria-hidden="true"></div>
-
 <!-- PORTFOLIO -->
 <section class="sec sec-d" id="portfolio" aria-labelledby="portfolio-heading">
   <h2 class="s-h fade-in" id="portfolio-heading">Live Work</h2>
   <div class="pf-layout">
     <div class="pf-cell tall pf-bg1 fade-in">
-      <div class="pf-vis"><span class="pf-ghost" aria-hidden="true">HS</span></div>
+      <div class="pf-vis"><span class="pf-ghost" aria-hidden="true">EH</span></div>
       <div class="pf-overlay">
-        <div>
-          <!-- <div class="pf-kind">School</div> -->
-          <div class="pf-title">Excellence High School Concept</div>
+        <div>          <div class="pf-title">Excellence High School Concept</div>
           <p class="pf-desc">Excellence High School's complete digital presence. Live news and announcements, exam timetables, full admissions flow, staff profiles, subject catalogue, and parent contact hub — all in one elegant platform.</p>
           <a href="https://school-demo-peach.vercel.app/" class="pf-link" target="_blank" rel="noopener noreferrer">View Live Site ↗</a>
         </div>
       </div>
     </div>
     <div class="pf-cell pf-bg2 fade-in">
-      <div class="pf-vis"><span class="pf-ghost" aria-hidden="true">HS</span></div>
+      <div class="pf-vis"><span class="pf-ghost" aria-hidden="true">LM</span></div>
       <div class="pf-overlay">
-        <div>
-          <!-- <div class="pf-kind">Beauty</div> -->
-          <div class="pf-title">Lumière Beauty Studio Concept</div>
+        <div>          <div class="pf-title">Lumière Beauty Studio Concept</div>
           <p class="pf-desc">A sleek, appointment-ready website for Lumière Beauty Studio — designed to convert visitors into bookings with an elegant aesthetic that matches the brand's premium feel.</p>
           <a href="https://lumiere-xi-sage.vercel.app/" class="pf-link" target="_blank" rel="noopener noreferrer">View Live Site ↗</a>
         </div>
       </div>
     </div>
     <div class="pf-cell pf-bg3 fade-in">
-      <div class="pf-vis"><span class="pf-ghost" aria-hidden="true">HS</span></div>
+      <div class="pf-vis"><span class="pf-ghost" aria-hidden="true">AP</span></div>
       <div class="pf-overlay">
-        <div>
-          <!-- <div class="pf-kind">EPK</div> -->
-          <div class="pf-title">Artist Portfolio Concept</div>
+        <div>          <div class="pf-title">Artist Portfolio Concept</div>
           <p class="pf-desc">A modern, responsive portfolio website for a professional artist — showcasing their work in a clean, visually appealing layout.</p>
           <a href="https://epk-pi.vercel.app/" class="pf-link" target="_blank" rel="noopener noreferrer">View Live Site ↗</a>
         </div>
@@ -577,14 +2183,14 @@
   <div class="ct-layout">
 
     <div class="ct-channels">
-      <a href="https://wa.me/27749258393" class="ct-ch fade-in" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+      <a href="https://wa.me/27816802610" class="ct-ch fade-in" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
         <div class="ct-ico" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
         </div>
         <div class="ct-lbl">WhatsApp</div>
-        <div class="ct-val">+27 74 925 8393</div>
+        <div class="ct-val">+27 81 680 2610</div>
       </a>
       <a href="mailto:ambientelectron.info@gmail.com" class="ct-ch fade-in" aria-label="Send us an email">
         <div class="ct-ico" aria-hidden="true">
@@ -596,14 +2202,14 @@
         <div class="ct-lbl">Email</div>
         <div class="ct-val">ambientelectron.info@gmail.com</div>
       </a>
-      <a href="tel:+27749258393" class="ct-ch fade-in" aria-label="Call us">
+      <a href="tel:+27816802610" class="ct-ch fade-in" aria-label="Call us">
         <div class="ct-ico" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.01 21 3 13.99 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
           </svg>
         </div>
         <div class="ct-lbl">Phone</div>
-        <div class="ct-val">+27 74 925 8393</div>
+        <div class="ct-val">+27 81 680 2610</div>
       </a>
     </div>
 
@@ -633,11 +2239,10 @@
           <label class="cf-label" for="cf-package">Package of Interest</label>
           <select class="cf-input cf-select" id="cf-package" name="package" required>
             <option value="">Select a package…</option>
-            <option value="Signal">Signal — 1–3 pages</option>
-            <option value="Pulse">Pulse — 4–8 pages</option>
-            <option value="Current">Current — 9+ pages</option>
-            <option value="Care">Care — R450/month</option>
-            <!-- <option value="Care+">Care+ — From R1,200/month</option> -->
+            <option value="Signal">Signal — Simple &amp; Static</option>
+            <option value="Pulse">Pulse — Interactive &amp; Custom</option>
+            <option value="Current">Current — Advanced &amp; Integrated</option>
+            <option value="Care">Care — R399/month</option>
             <option value="Book a Call">Book a Call — general enquiry</option>
             <option value="Not sure">Not sure yet</option>
           </select>
@@ -647,7 +2252,7 @@
           <textarea class="cf-input cf-textarea" id="cf-message" name="message" placeholder="Tell us about your project…" rows="4" required></textarea>
         </div>
         <div class="cf-footer">
-          <p class="cf-note">By submitting you agree to our <a href="./pages/privacy-policy.html">Privacy Policy</a>. We respond within 1 business day.</p>
+          <p class="cf-note">By submitting you agree to our <a href="privacy-policy.html">Privacy Policy</a>. We respond within 1 business day.</p>
           <button type="submit" class="cf-btn" id="cf-submit">
             <span id="cf-btn-text">Send Message</span>
           </button>
@@ -683,31 +2288,334 @@
       <ul>
         <li><a href="#contact">Contact Us</a></li>
         <li><a href="mailto:ambientelectron.info@gmail.com">ambientelectron.info@gmail.com</a></li>
-        <li><a href="https://wa.me/27749258393" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://wa.me/27816802610" target="_blank" rel="noopener">WhatsApp</a></li>
       </ul>
     </div>
   </div>
   <div class="ft-bottom">
-    <div class="ft-copy">© 2025 AMBIENT ELECTRON (PTY) LTD — ALL RIGHTS RESERVED — SOUTH AFRICA</div>
+    <div class="ft-copy">© 2025 AMBIENT ELECTRON — ALL RIGHTS RESERVED — SOUTH AFRICA</div>
+    <div class="ft-reg">Reg No: 2026/000000/07 &nbsp;·&nbsp; B-BBEE Level 1</div>
     <div class="ft-legal">
-      <a href="./pages/privacy-policy.html">Privacy Policy</a>
-      <a href="./pages/terms.html">Terms of Service</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
     </div>
   </div>
 </footer>
 
 <!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/27749258393" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">💬</a>
-
-<!-- SWIPE HINT -->
-<div class="swipe-hint" id="swipe-hint" aria-hidden="true">
-  <div class="swipe-arrow">→</div>
-  <span class="swipe-text">swipe</span>
-</div>
+<a href="https://wa.me/27816802610" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">💬</a>
 
 <!-- BACK TO TOP -->
 <button class="btt" id="btt" aria-label="Back to top" title="Back to top">↑</button>
 
 <script src="./js/script.js"></script>
+
+
+<script>
+/* ── CURSOR ── */
+const cur = document.getElementById("cur");
+function refreshCursor() {
+  if (!cur) return;
+  document.querySelectorAll("a,button,.sv-item,.pf-cell,.ct-ch,.stat,.proc-step,.pt-btn,.pr-call-btn").forEach((el) => {
+    el.addEventListener("mouseenter", () => cur.classList.add("big"));
+    el.addEventListener("mouseleave", () => cur.classList.remove("big"));
+  });
+}
+if (cur) {
+  document.addEventListener("mousemove", (e) => {
+    cur.style.left = e.clientX + "px";
+    cur.style.top = e.clientY + "px";
+  });
+  refreshCursor();
+}
+
+/* ── PARTICLE CANVAS ── */
+(() => {
+  const cv = document.getElementById("cv");
+  if (!cv) return;
+  const cx = cv.getContext("2d");
+  let pts = [];
+
+  const resize = () => { cv.width = innerWidth; cv.height = innerHeight; };
+  const mk = () => ({
+    x: Math.random() * cv.width,
+    y: Math.random() * cv.height,
+    vx: (Math.random() - 0.5) * 0.3,
+    vy: (Math.random() - 0.5) * 0.3,
+    r: Math.random() * 0.9 + 0.2,
+    op: Math.random() * 0.28 + 0.05,
+    ph: Math.random() * Math.PI * 2,
+  });
+  const init = () => { resize(); pts = Array.from({ length: 70 }, mk); };
+  const draw = () => {
+    cx.clearRect(0, 0, cv.width, cv.height);
+    pts.forEach((p) => {
+      p.x += p.vx; p.y += p.vy; p.ph += 0.012;
+      if (p.x < 0) p.x = cv.width;
+      if (p.x > cv.width) p.x = 0;
+      if (p.y < 0) p.y = cv.height;
+      if (p.y > cv.height) p.y = 0;
+      const o = p.op + Math.sin(p.ph) * 0.06;
+      cx.beginPath();
+      cx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      cx.fillStyle = `rgba(0,207,255,${o})`;
+      cx.fill();
+    });
+    for (let i = 0; i < pts.length; i++)
+      for (let j = i + 1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x;
+        const dy = pts[i].y - pts[j].y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 140) {
+          cx.beginPath();
+          cx.moveTo(pts[i].x, pts[i].y);
+          cx.lineTo(pts[j].x, pts[j].y);
+          cx.strokeStyle = `rgba(0,207,255,${(1 - d / 140) * 0.05})`;
+          cx.lineWidth = 0.3;
+          cx.stroke();
+        }
+      }
+    requestAnimationFrame(draw);
+  };
+  init(); draw();
+  window.addEventListener("resize", init);
+})();
+
+/* ── SCROLL REVEAL ── */
+function observeFadeIns() {
+  const obs = new IntersectionObserver(
+    (es) => {
+      es.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("vis"); obs.unobserve(e.target); }
+      });
+    },
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll(".fade-in:not(.vis)").forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 0.1}s`;
+    obs.observe(el);
+  });
+}
+observeFadeIns();
+
+/* ── ACTIVE NAV ON SCROLL ── */
+const navSections = ["process", "services", "pricing", "portfolio", "contact"];
+const navLinks = document.querySelectorAll("[data-nav]");
+const navEl = document.getElementById("nav");
+
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+
+  // shrink nav
+  navEl.classList.toggle("scrolled", y > 60);
+
+  // back to top + whatsapp
+  document.getElementById("btt").classList.toggle("show", y > 400);
+  document.querySelector(".wa-float").classList.toggle("show", y > 400);
+
+  // active section highlight
+  let current = "";
+  navSections.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop - 120 <= y) current = id;
+  });
+  navLinks.forEach((a) => {
+    a.classList.toggle("active", a.dataset.nav === current);
+  });
+}, { passive: true });
+
+/* ── SERVICES ACCORDION ── */
+document.querySelectorAll(".sv-item .sv-head").forEach((head) => {
+  const toggle = () => {
+    const item = head.closest(".sv-item");
+    const isOpen = item.classList.contains("open");
+    document.querySelectorAll(".sv-item").forEach((i) => {
+      i.classList.remove("open");
+      i.querySelector(".sv-head").setAttribute("aria-expanded", "false");
+    });
+    if (!isOpen) {
+      item.classList.add("open");
+      head.setAttribute("aria-expanded", "true");
+    }
+  };
+  head.addEventListener("click", toggle);
+  head.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+  });
+});
+
+/* ── HAMBURGER / DRAWER ── */
+const hbg = document.getElementById("hbg");
+const drawer = document.getElementById("drawer");
+
+function openDrawer() {
+  drawer.classList.add("open");
+  hbg.classList.add("open");
+  hbg.setAttribute("aria-expanded", "true");
+  document.body.style.overflow = "hidden";
+}
+function closeDrawer() {
+  drawer.classList.remove("open");
+  hbg.classList.remove("open");
+  hbg.setAttribute("aria-expanded", "false");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("dclose").addEventListener("click", closeDrawer);
+
+hbg.addEventListener("click", () => {
+  hbg.classList.contains("open") ? closeDrawer() : openDrawer();
+});
+drawer.addEventListener("click", (e) => {
+  if (e.target === drawer) closeDrawer();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeDrawer();
+});
+
+/* ── BACK TO TOP ── */
+document.getElementById("btt").addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+/* ── CONTACT FORM ── */
+function setPackage(name) {
+  const sel = document.getElementById("cf-package");
+  if (!sel) return;
+  for (let i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === name) { sel.selectedIndex = i; break; }
+  }
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+}
+
+function validateForm() {
+  let valid = true;
+
+  document.querySelectorAll(".cf-input.invalid").forEach((el) => el.classList.remove("invalid"));
+  document.querySelectorAll(".cf-field-error").forEach((el) => el.remove());
+
+  const fields = [
+    { id: "cf-name",    label: "Name",             required: true, type: "text"   },
+    { id: "cf-org",     label: "Organisation",     required: true, type: "text"   },
+    { id: "cf-email",   label: "Email",            required: true, type: "email"  },
+    { id: "cf-phone",   label: "WhatsApp / Phone", required: true, type: "tel"    },
+    { id: "cf-package", label: "Package",          required: true, type: "select" },
+    { id: "cf-message", label: "Message",          required: true, type: "text"   },
+  ];
+
+  fields.forEach((f) => {
+    const el = document.getElementById(f.id);
+    if (!el) return;
+    const val = el.value.trim();
+    let msg = null;
+
+    if (f.required && !val) {
+      msg = `${f.label} is required`;
+    } else if (val && f.type === "email") {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) msg = "Please enter a valid email address";
+    } else if (val && f.type === "tel") {
+      if (!/^[\d\s\+\-\(\)]{7,15}$/.test(val)) msg = "Please enter a valid phone number";
+    }
+
+    if (msg) {
+      valid = false;
+      el.classList.add("invalid");
+      const err = document.createElement("span");
+      err.className = "cf-field-error";
+      err.textContent = msg;
+      el.parentNode.appendChild(err);
+    }
+  });
+
+  return valid;
+}
+
+const ctForm = document.getElementById("ct-form");
+if (ctForm) {
+  ctForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    const btn = document.getElementById("cf-submit");
+    const btnText = document.getElementById("cf-btn-text");
+    const success = document.getElementById("cf-success");
+    const error = document.getElementById("cf-error");
+
+    btn.disabled = true;
+    btnText.textContent = "Sending…";
+    success.style.display = "none";
+    error.style.display = "none";
+
+    try {
+      const res = await fetch("https://formspree.io/f/xvzdyvdz", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(ctForm),
+      });
+      if (res.ok) {
+        success.style.display = "block";
+        ctForm.reset();
+      } else {
+        throw new Error("Network response not ok");
+      }
+    } catch {
+      error.style.display = "block";
+    } finally {
+      btn.disabled = false;
+      btnText.textContent = "Send Message";
+    }
+  });
+}
+
+/* ── SWIPE HINT JS ── */
+const swipeHint = document.getElementById('swipe-hint');
+const buildTable = document.querySelector('.pt-wrap');
+
+if (swipeHint && buildTable) {
+  window.addEventListener('scroll', () => {
+    const rect = buildTable.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight * 0.6 && rect.bottom > window.innerHeight * 0.5;
+    swipeHint.classList.toggle('visible', inView);
+  }, { passive: true });
+
+  document.querySelectorAll('.pt-wrap').forEach(wrap => {
+    wrap.addEventListener('scroll', () => {
+      swipeHint.classList.remove('visible');
+    }, { passive: true, once: true });
+  });
+}
+
+/* ── PRICING ACCORDION ── */
+document.querySelectorAll('.pr-acc-head').forEach(head => {
+  head.addEventListener('click', () => {
+    const item = head.closest('.pr-acc-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.pr-acc-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) {
+      item.classList.add('open');
+      setTimeout(() => {
+        const navHeight = document.getElementById('nav').offsetHeight || 70;
+        const top = item.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }, 300);
+    }
+  });
+});
+
+/* ── ADD-ON PRICING TOGGLE ── */
+const aoToggle = document.getElementById('ao-toggle');
+const aoPanel = document.getElementById('ao-panel');
+if (aoToggle && aoPanel) {
+  aoToggle.addEventListener('click', () => {
+    const isOpen = aoPanel.classList.contains('open');
+    aoPanel.classList.toggle('open', !isOpen);
+    aoToggle.classList.toggle('open', !isOpen);
+    aoToggle.setAttribute('aria-expanded', String(!isOpen));
+    aoToggle.querySelector('.ao-toggle-label').textContent = !isOpen ? 'Hide Add-On Pricing' : 'See Add-On Pricing';
+  });
+}
+
+</script>
 </body>
 </html>
